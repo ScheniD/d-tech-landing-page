@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="footerImpressum">Impressum | D-Tech Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-content {
+            padding: 140px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .legal-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        .legal-content h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .legal-content p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="D-Tech Solutions Logo">
+                <span>D-Tech Solutions</span>
+            </a>
+            <div class="nav-actions">
+                <button id="langToggle" class="lang-btn" data-i18n="langBtn">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="legal-content">
+            <a href="index.html" class="back-link">← Zurück / Back</a>
+            
+            <section id="de-content">
+                <h1>Impressum</h1>
+                <p>Angaben gemäß § 5 TMG</p>
+                
+                <h2>Kontakt</h2>
+                <p>
+                    Dominik Schenitzki<br>
+                    [DEINE STRASSE & HAUSNUMMER]<br>
+                    [PLZ & STADT]<br>
+                    Deutschland
+                </p>
+                
+                <p>
+                    <strong>E-Mail:</strong> [DEINE E-MAIL ADRESSE]<br>
+                    <strong>Telefon:</strong> [DEINE TELEFONNUMMER (OPTIONAL)]
+                </p>
+
+                <h2>Umsatzsteuer-ID</h2>
+                <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+                [FALLS VORHANDEN, SONST ENTFERNEN ODER HINWEIS AUF KLEINUNTERNEHMERREGELUNG]</p>
+                
+                <h2>Redaktionell verantwortlich</h2>
+                <p>Dominik Schenitzki</p>
+
+                <h2>EU-Streitschlichtung</h2>
+                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: var(--primary);">https://ec.europa.eu/consumers/odr/</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+                <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+                <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </section>
+
+            <hr style="margin: 40px 0; border: 0; border-top: 1px solid var(--border-color);">
+
+            <section id="en-content">
+                <h1>Legal Notice</h1>
+                <p>Information according to § 5 TMG</p>
+                
+                <h2>Contact</h2>
+                <p>
+                    Dominik Schenitzki<br>
+                    [YOUR STREET & HOUSE NUMBER]<br>
+                    [ZIP CODE & CITY]<br>
+                    Germany
+                </p>
+                
+                <p>
+                    <strong>Email:</strong> [YOUR EMAIL ADDRESS]<br>
+                    <strong>Phone:</strong> [YOUR PHONE NUMBER (OPTIONAL)]
+                </p>
+
+                <h2>VAT ID</h2>
+                <p>VAT identification number according to § 27 a VAT Act:<br>
+                [IF APPLICABLE, OTHERWISE REMOVE OR NOTE SMALL BUSINESS STATUS]</p>
+                
+                <h2>Responsible for content</h2>
+                <p>Dominik Schenitzki</p>
+
+                <h2>EU Dispute Resolution</h2>
+                <p>The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: var(--primary);">https://ec.europa.eu/consumers/odr/</a>. You can find our email address in the legal notice above.</p>
+
+                <h2>Dispute Resolution</h2>
+                <p>We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p data-i18n="footerText">&copy; 2026 D-Tech Solutions. Alle Rechte vorbehalten.</p>
+                <div class="footer-links">
+                    <a href="impressum.html" data-i18n="footerImpressum">Impressum</a>
+                    <a href="datenschutz.html" data-i18n="footerPrivacy">Datenschutz</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

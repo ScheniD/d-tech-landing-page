@@ -122,11 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
             formMessage: "Tell us about your project...",
             formBtn: "Send Message",
             footerText: "&copy; 2026 D-Tech Solutions. All rights reserved.",
+            footerImpressum: "Legal Notice",
+            footerPrivacy: "Privacy Policy",
             langBtn: "DE"
         }
     };
 
-    let currentLang = 'de';
+    let currentLang = localStorage.getItem('selectedLang') || 'de';
     const langBtn = document.getElementById('langToggle');
 
     function updateLanguage() {
@@ -147,7 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (metaDesc) metaDesc.content = t['desc'];
         
         document.documentElement.lang = currentLang;
+        localStorage.setItem('selectedLang', currentLang);
     }
+
+    // Initial translation call
+    updateLanguage();
 
     if (langBtn) {
         langBtn.addEventListener('click', () => {
