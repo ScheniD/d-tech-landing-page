@@ -431,6 +431,7 @@ footer {
 .portfolio-track-wrapper {
     overflow: hidden;
     width: 100%;
+    min-height: 500px; /* Ensure there is space for the content */
 }
 
 .portfolio-track {
