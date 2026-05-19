@@ -261,21 +261,28 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentSlideIndex = 0;
 
         const updateSlider = () => {
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            track.style.transform = `translateX(-${currentSlideIndex * (slideWidth + 40)}px)`; // 40 is the gap
+            const slideWidth = track.clientWidth; // Use track width for accuracy
+            track.style.transform = `translateX(-${currentSlideIndex * (slideWidth + 40)}px)`; 
         };
 
-        nextBtn.addEventListener('click', () => {
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            updateSlider();
-        });
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                updateSlider();
+            });
+        }
 
-        prevBtn.addEventListener('click', () => {
-            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-            updateSlider();
-        });
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                updateSlider();
+            });
+        }
 
         window.addEventListener('resize', updateSlider);
+        
+        // Initial set
+        setTimeout(updateSlider, 100); 
     }
 
     // Service Cards Accordion
