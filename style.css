@@ -503,12 +503,11 @@ footer {
     transform: none !important;
 }
 
-/* Animations */
+/* Animations - Force visible to fix the black screen issue */
 .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
 }
 
 /* Fallback: If JS is disabled or fails, show content anyway */
@@ -520,13 +519,13 @@ footer {
 }
 
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 /* Ensure Hero is always visible or fades in quickly */
 .hero .fade-in {
-    transition-duration: 1.2s;
+    opacity: 1 !important;
 }
 
 /* Nav Actions & Language Toggle */
