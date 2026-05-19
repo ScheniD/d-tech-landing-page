@@ -196,6 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll Animations (Intersection Observer)
     const fadeElements = document.querySelectorAll('.fade-in');
     
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -203,14 +208,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
+    }, observerOptions);
 
     fadeElements.forEach(element => {
         observer.observe(element);
     });
+
+    // Force visible for hero elements immediately if they are in viewport
+    setTimeout(() => {
+        document.querySelectorAll('.hero .fade-in').forEach(el => {
+            el.classList.add('visible');
+        });
+    }, 100);
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

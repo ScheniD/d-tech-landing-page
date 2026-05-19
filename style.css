@@ -501,12 +501,26 @@ footer {
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+}
+
+/* Fallback: If JS is disabled or fails, show content anyway */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Ensure Hero is always visible or fades in quickly */
+.hero .fade-in {
+    transition-duration: 1.2s;
 }
 
 /* Nav Actions & Language Toggle */
