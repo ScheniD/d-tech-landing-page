@@ -427,12 +427,14 @@ footer {
     max-width: 1400px;
     margin: 0 auto;
     overflow: hidden;
-    padding: 60px 0;
+    padding: 60px 0 120px 0; /* Extra bottom padding for phone breakout */
 }
 
 .portfolio-track-wrapper {
     width: 100%;
     overflow: hidden;
+    padding-bottom: 80px; /* Space for phone breakout */
+    margin-bottom: -80px; /* Offset padding to keep layout tight */
 }
 
 .portfolio-track {
@@ -444,9 +446,9 @@ footer {
 .portfolio-slide {
     flex: 0 0 100%;
     width: 100%;
-    padding: 0 100px; /* Increased space for side arrows */
+    padding: 0 100px;
     position: relative;
-    overflow: hidden; /* Prevent assets from bleeding into other slides */
+    overflow: visible; /* Allow phone mockup to break out */
 }
 
 .project-showcase {
@@ -501,7 +503,7 @@ footer {
     background: #000;
     border: 10px solid #222;
     border-radius: 36px;
-    right: -20px;
+    right: 0; /* Nudged in */
     bottom: -60px; /* Pull down slightly */
     box-shadow: 0 40px 80px rgba(0,0,0,0.9);
     overflow: hidden;
@@ -567,18 +569,23 @@ footer {
 
 .slider-btn {
     pointer-events: auto;
-    background: transparent; /* Removed background circles */
-    border: none; /* Removed border */
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
     color: rgba(255, 255, 255, 0.3);
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 2.5rem; /* Increased arrow size since circles are gone */
+    font-size: 3rem;
     padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    user-select: none;
 }
 
 .slider-btn:hover {
