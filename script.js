@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
             titleAbout: "About Me",
             aboutText: "Hi, I'm Dominik, a 29-year-old Computer Science student. I founded D-Tech Solutions to combine my passion for technology and web development with real business needs. My goal is to create modern and high-performance web solutions that help you succeed in the digital world.",
             titlePortfolio: "Projects / References",
-            proj1Title: "Local Business Re-Design",
-            proj1Desc: "Complete redesign of a local bakery with integration of an online ordering system to increase sales.",
+            proj1Title: "Haarprofi Frankfurt",
+            proj1Desc: "A modern, luxurious redesign for a premium salon on the Zeil. Focus on aesthetics, user experience, and online booking integration.",
             proj2Title: "E-Commerce Platform",
             proj2Desc: "Development of a scalable e-commerce platform for a growing retailer with automated inventory management.",
             proj3Title: "SaaS Web App",
@@ -289,5 +289,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+});
+}
 
 });
