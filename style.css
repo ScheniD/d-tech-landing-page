@@ -429,6 +429,23 @@ footer {
     margin-bottom: 80px;
 }
 
+.project-info {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+
 @media (max-width: 992px) {
     .project-showcase {
         grid-template-columns: 1fr;
