@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muthmedia | Filmproduktion & Videoproduktion Frankfurt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Manrope:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #E1FF00; /* Neon Yellow-Green */
+            --bg: #000000;
+            --surface: #111111;
+            --text: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Manrope', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+        .navbar {
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            background: linear-gradient(to bottom, black, transparent);
+        }
+
+        .logo { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 2px; }
+        .logo span { color: var(--accent); }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5%;
+            background: linear-gradient(to right, black, transparent), url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1600') center/cover;
+        }
+
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(2.5rem, 8vw, 6rem); line-height: 0.9; margin-bottom: 30px; text-transform: uppercase; }
+        .hero h1 span { color: transparent; -webkit-text-stroke: 1px white; }
+
+        .hero p { max-width: 500px; font-size: 1.2rem; color: #ccc; margin-bottom: 40px; font-weight: 300; }
+
+        .btn-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .btn-video:hover { gap: 25px; }
+        .play-icon { width: 50px; height: 50px; border: 1px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+        .showreel-section { padding: 100px 5%; }
+        .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .video-card { aspect-ratio: 16/9; background: var(--surface); position: relative; overflow: hidden; }
+        .video-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.5s; }
+        .video-card:hover img { opacity: 1; transform: scale(1.05); }
+        .video-info { position: absolute; bottom: 30px; left: 30px; }
+        .video-info h3 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; margin-bottom: 5px; }
+        .video-info p { font-size: 0.7rem; text-transform: uppercase; color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">muth<span>media</span></div>
+        <div style="font-size: 0.6rem; letter-spacing: 2px;">FRANKFURT FILM STUDIO</div>
+    </nav>
+
+    <header class="hero">
+        <h1>Move<br><span>Emotions.</span></h1>
+        <p>Wir kreieren Filme, die nicht nur gesehen, sondern gefühlt werden. Strategisches Video-Marketing für Marken mit Vision.</p>
+        <a href="#" class="btn-video">
+            <div class="play-icon">▶</div>
+            Showreel 2026
+        </a>
+    </header>
+
+    <section class="showreel-section">
+        <div class="video-grid">
+            <div class="video-card">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800" alt="Project 1">
+                <div class="video-info">
+                    <h3>Porsche Experience</h3>
+                    <p>Commercial / 2026</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=800" alt="Project 2">
+                <div class="video-info">
+                    <h3>Main-Tower Sessions</h3>
+                    <p>Documentary / 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

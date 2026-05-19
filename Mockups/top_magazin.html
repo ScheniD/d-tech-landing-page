@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Magazin Frankfurt | Editorial & Lifestyle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #E30613; /* Classic Editorial Red */
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray: #111111;
+            --dark-gray: #1a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); line-height: 1.5; }
+
+        .navbar {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--white);
+            background: var(--black);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; color: var(--white); }
+        .nav-links { display: flex; gap: 30px; list-style: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--white); }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 90vh;
+            border-bottom: 2px solid var(--white);
+        }
+
+        .hero-text {
+            padding: 10% 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 2px solid var(--white);
+            background: var(--black);
+        }
+
+        .hero-text span { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 6rem); line-height: 0.9; font-style: italic; margin-bottom: 30px; color: var(--white); }
+
+        .hero-image {
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&q=80&w=1200') center/cover;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 2px solid var(--white);
+        }
+
+        .grid-item {
+            padding: 40px;
+            border-right: 2px solid var(--white);
+            transition: background 0.3s;
+            text-decoration: none;
+            color: var(--white);
+        }
+        .grid-item:last-child { border-right: none; }
+        .grid-item:hover { background: var(--dark-gray); }
+
+        .grid-item img { width: 100%; aspect-ratio: 4/5; object-fit: cover; margin-bottom: 20px; filter: grayscale(20%); }
+        .grid-item h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; color: var(--white); }
+        .grid-item p { font-size: 0.9rem; color: #aaa; }
+
+        .btn-black {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            width: fit-content;
+        }
+
+        @media (max-width: 992px) {
+            .hero { grid-template-columns: 1fr; min-height: 100vh; }
+            .hero-text { border-right: none; border-bottom: 2px solid var(--white); padding: 60px 20px; }
+            .hero-text h1 { font-size: 3.5rem; }
+            .hero-image { height: 350px; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .grid-item { border-right: none; border-bottom: 2px solid var(--white); padding: 40px 20px; }
+            .logo { font-size: 1.5rem; }
+            .nav-links { display: none; }
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Top Magazin</div>
+        <ul class="nav-links">
+            <li>People</li>
+            <li>Lifestyle</li>
+            <li>Events</li>
+            <li>Gastro</li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <span>Special Report</span>
+            <h1>Skyline &<br>Secrets.</h1>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Wir blicken hinter die Kulissen der Frankfurter High-Society. Exklusive Interviews und unentdeckte Orte im Herzen der Stadt.</p>
+            <a href="#" class="btn-black">Ausgabe lesen</a>
+        </div>
+        <div class="hero-image"></div>
+    </header>
+
+    <section class="featured-grid">
+        <a href="#" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600" alt="Gastro">
+            <h3>Die besten Bars der Stadt</h3>
+            <p>Wo man in Frankfurt die besten Cocktails genießt – von klassisch bis avantgardistisch.</p>
+        </a>
+        <a href="#" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=600" alt="Fashion">
+            <h3>Herbst-Mode Trends</h3>
+            <p>Die Must-Haves der Saison direkt von der Frankfurter Goethestraße.</p>
+        </a>
+        <a href="#" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" alt="Immobilien">
+            <h3>Wohnen über den Wolken</h3>
+            <p>Ein Blick in die exklusivsten Penthouses im neuen Four Frankfurt.</p>
+        </a>
+    </section>
+</body>
+</html>

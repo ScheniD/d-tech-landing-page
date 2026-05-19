@@ -16,10 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
             titlePortfolio: "Projekte / Referenzen",
             proj1Title: "Haarprofi Frankfurt",
             proj1Desc: "Ein modernes, luxuriöses Redesign für einen erstklassigen Salon auf der Zeil. Fokus auf Ästhetik, Benutzerfreundlichkeit und Online-Terminbuchung.",
-            proj2Title: "E-Commerce Plattform",
-            proj2Desc: "Entwicklung einer skalierbaren E-Commerce-Plattform für einen wachsenden Einzelhändler mit automatisiertem Inventar-Management.",
-            proj3Title: "SaaS Web-App",
-            proj3Desc: "Komplexe SaaS-Applikation mit nutzerfreundlichem Dashboard und Echtzeit-Datenverarbeitung.",
+            proj1Feat1: "Premium Branding",
+            proj1Feat2: "Responsive Design",
+            proj1Feat3: "Cal.com Integration",
+            proj2Title: "idee. Creativmarkt",
+            proj2Desc: "Ein inspirierender Workspace für Kunst und DIY im Herzen von Frankfurt. Modernes Bento-Grid Design mit Fokus auf Workshops und Kreativität.",
+            proj2Feat1: "Vibrant Branding",
+            proj2Feat2: "Bento Grid Layout",
+            proj2Feat3: "Workshop Integration",
+            proj3Title: "Muthmedia Filmproduktion",
+            proj3Desc: "High-End Filmstudio-Website mit cineastischer Ästhetik und Neon-Akzenten. Optimiert für emotionales Video-Marketing.",
+            proj3Feat1: "Cinematic Design",
+            proj3Feat2: "Video Portfolio",
+            proj3Feat3: "Dark Mode Aesthetic",
+            proj4Title: "Top Magazin Frankfurt",
+            proj4Desc: "Luxuriöses Lifestyle-Magazin mit kontrastreichem Editorial-Design. Anspruchsvolles Layout für High-Society Inhalte.",
+            proj4Feat1: "Editorial Layout",
+            proj4Feat2: "High Contrast Design",
+            proj4Feat3: "Lifestyle Portfolio",
             btnStart: "Projekt Starten",
             btnExplore: "Dienstleistungen Entdecken",
             titlePackages: "Service-Pakete",
@@ -77,10 +91,24 @@ document.addEventListener('DOMContentLoaded', () => {
             titlePortfolio: "Projects / References",
             proj1Title: "Haarprofi Frankfurt",
             proj1Desc: "A modern, luxurious redesign for a premium salon on the Zeil. Focus on aesthetics, user experience, and online booking integration.",
-            proj2Title: "E-Commerce Platform",
-            proj2Desc: "Development of a scalable e-commerce platform for a growing retailer with automated inventory management.",
-            proj3Title: "SaaS Web App",
-            proj3Desc: "Complex SaaS application with user-friendly dashboard and real-time data processing.",
+            proj1Feat1: "Premium Branding",
+            proj1Feat2: "Responsive Design",
+            proj1Feat3: "Cal.com Integration",
+            proj2Title: "idee. Creativmarkt",
+            proj2Desc: "An inspiring workspace for art and DIY in the heart of Frankfurt. Modern bento-grid design focused on workshops and creativity.",
+            proj2Feat1: "Vibrant Branding",
+            proj2Feat2: "Bento Grid Layout",
+            proj2Feat3: "Workshop Integration",
+            proj3Title: "Muthmedia Film Production",
+            proj3Desc: "High-end film studio website with cinematic aesthetics and neon accents. Optimized for emotional video marketing.",
+            proj3Feat1: "Cinematic Design",
+            proj3Feat2: "Video Portfolio",
+            proj3Feat3: "Dark Mode Aesthetic",
+            proj4Title: "Top Magazin Frankfurt",
+            proj4Desc: "Luxury lifestyle magazine with high-contrast editorial design. Sophisticated layout for high-society content.",
+            proj4Feat1: "Editorial Layout",
+            proj4Feat2: "High Contrast Design",
+            proj4Feat3: "Lifestyle Portfolio",
             btnStart: "Start Your Project",
             btnExplore: "Explore Services",
             titlePackages: "Service Packages",
@@ -222,6 +250,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Portfolio Slider
+    const track = document.querySelector('.portfolio-track');
+    const slides = Array.from(document.querySelectorAll('.portfolio-slide'));
+    const nextBtn = document.querySelector('.slider-btn.next');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    
+    if (track && slides.length > 0) {
+        let currentSlideIndex = 0;
+
+        const updateSlider = () => {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentSlideIndex * (slideWidth + 40)}px)`; // 40 is the gap
+        };
+
+        nextBtn.addEventListener('click', () => {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+
+        window.addEventListener('resize', updateSlider);
+    }
 
     // Service Cards Accordion
     const serviceCards = document.querySelectorAll('.service-card');

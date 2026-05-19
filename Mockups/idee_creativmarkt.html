@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idee. Creativmarkt | Dein Space für Inspiration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF4D00; /* Vibrant Orange */
+            --bg: #FDFCFB;
+            --dark: #1A1A1A;
+            --soft-blue: #E1EFFF;
+            --soft-pink: #FFE8E8;
+            --soft-yellow: #FFF9E1;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--dark); overflow-x: hidden; }
+
+        .nav {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+
+        .hero {
+            padding: 40px 5% 100px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            line-height: 0.9;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+        }
+
+        .hero-text h1 em {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            color: var(--primary);
+            font-weight: 400;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            max-width: 450px;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .main-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 40px;
+            transform: rotate(-2deg);
+        }
+
+        .floating-shape {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 200px;
+            height: 200px;
+            background: var(--soft-yellow);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        .btn-round {
+            display: inline-flex;
+            width: 150px;
+            height: 150px;
+            background: var(--dark);
+            color: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-left: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-round:hover {
+            background: var(--primary);
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        /* Bento Grid */
+        .grid-section { padding: 0 5% 100px; }
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: 20px;
+        }
+
+        .bento-item {
+            border-radius: 30px;
+            padding: 40px;
+            text-decoration: none;
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-item:hover { transform: scale(0.98); }
+
+        .bento-1 { grid-column: span 2; background: var(--soft-blue); }
+        .bento-2 { background: var(--soft-pink); }
+        .bento-3 { background: var(--soft-yellow); }
+        .bento-4 { background: #E9F7EF; }
+        .bento-5 { grid-column: span 3; background: #F4F4F4; display: flex; flex-direction: row; align-items: center; }
+
+        .bento-item h3 { font-size: 2rem; letter-spacing: -1px; position: relative; z-index: 2; }
+        .bento-item img { position: absolute; right: -20px; bottom: -20px; width: 200px; opacity: 0.8; }
+
+        @media (max-width: 992px) {
+            .hero { grid-template-columns: 1fr; padding-top: 20px; }
+            .hero-text h1 { font-size: 3.8rem; margin-bottom: 20px; }
+            .hero-text p { font-size: 1.1rem; }
+            .hero-visual { padding: 0 20px; }
+            .main-img { height: 400px; border-radius: 30px; }
+            .bento { grid-template-columns: 1fr; grid-template-rows: auto; padding: 0 20px; }
+            .bento-item { height: 280px; grid-column: span 1; padding: 30px; }
+            .bento-item h3 { font-size: 1.8rem; }
+            .btn-round { width: 120px; height: 120px; margin-left: 0; margin-top: -60px; font-size: 0.8rem; }
+            .logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">idee<span>.</span></div>
+        <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Creative Studio / Frankfurt</div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Create<br>something<br><em>extraordinary.</em></h1>
+            <p>Dein Creative-Space im Herzen von Frankfurt. Wir liefern nicht nur Material, sondern den Funken für dein nächstes Meisterwerk.</p>
+            <a href="#" class="btn-round">Let's Get<br>Started</a>
+        </div>
+        <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=1000" class="main-img" alt="Creative Chaos">
+            <div class="floating-shape"></div>
+        </div>
+    </header>
+
+    <section class="grid-section">
+        <div class="bento">
+            <a href="#" class="bento-item bento-1">
+                <h3>Malerei &<br>Fine Art</h3>
+                <img src="https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?auto=format&fit=crop&q=80&w=400" alt="Paint">
+            </a>
+            <a href="#" class="bento-item bento-2">
+                <h3>DIY</h3>
+            </a>
+            <a href="#" class="bento-item bento-3">
+                <h3>Fabrics</h3>
+            </a>
+            <a href="#" class="bento-item bento-4">
+                <h3>Hand-made</h3>
+            </a>
+            <a href="#" class="bento-item bento-5">
+                <div style="padding-right: 40px;">
+                    <h3>Workshop Sessions</h3>
+                    <p style="margin-top: 10px; color: #666;">Lerne von den Profis in unserem Studio auf der Schäfergasse.</p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1517147177326-b37599372b73?auto=format&fit=crop&q=80&w=400" style="position: static; width: 300px; border-radius: 20px;" alt="Workshop">
+            </a>
+        </div>
+    </section>
+</body>
+</html>
