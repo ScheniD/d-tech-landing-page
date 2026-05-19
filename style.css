@@ -487,6 +487,7 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top; /* Ensure the website header is visible */
     filter: brightness(0.4); /* Darken for text readability */
     transition: transform 8s linear; /* Slow zoom effect */
 }
@@ -504,6 +505,7 @@ footer {
     transform: translateY(20px);
     opacity: 0;
     transition: all 0.8s ease 0.4s;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
 }
 
 .portfolio-slide.active .phone-mockup {
@@ -522,28 +524,30 @@ footer {
     border: none;
     backdrop-filter: none;
     height: 100%;
-    max-width: 800px;
+    max-width: 900px;
     text-align: left;
 }
 
 .project-info h3 {
     font-size: 5rem;
-    line-height: 1;
-    margin-bottom: 20px;
+    line-height: 1.1;
+    margin-bottom: 24px;
     text-transform: uppercase;
     letter-spacing: -2px;
     transform: translateY(30px);
     opacity: 0;
     transition: all 0.8s ease 0.2s;
+    font-weight: 800;
 }
 
 .project-info p {
     font-size: 1.4rem;
-    max-width: 500px;
+    max-width: 600px;
     margin-bottom: 30px;
     transform: translateY(30px);
     opacity: 0;
     transition: all 0.8s ease 0.3s;
+    color: rgba(255,255,255,0.8);
 }
 
 .project-info ul {
@@ -561,20 +565,39 @@ footer {
 
 .slider-controls {
     position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     z-index: 10;
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
+    padding: 0 30px;
+    pointer-events: none; /* Allow hover on images through the container gap */
 }
 
 .slider-btn {
+    pointer-events: auto; /* Buttons still clickable */
+    background: rgba(255, 255, 255, 0.03); /* More transparent */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5); /* Transparent arrows */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.8rem;
+    backdrop-filter: blur(5px);
+}
+
+.slider-btn:hover {
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+    color: #fff;
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Hide browser header in cinematic mode */
