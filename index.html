@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">D-Tech Solutions | Web-Erstellung, Hosting & Management</title>
+    <meta name="description" id="meta-desc" content="Premium Webseiten-Erstellung, zuverlässiges Hosting und Experten-Management für Unternehmen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="D-Tech Solutions Logo">
+                <span>D-Tech Solutions</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services" data-i18n="navServices" data-longest="Dienstleistungen">Dienstleistungen</a></li>
+                <li><a href="#portfolio" data-i18n="navPortfolio" data-longest="Referenzen">Referenzen</a></li>
+                <li><a href="#about" data-i18n="navAbout" data-longest="Über Mich">Über Mich</a></li>
+                <li><a href="#why-us" data-i18n="navWhyUs" data-longest="Warum Wir">Warum Wir</a></li>
+                <li><a href="#contact" class="btn-primary-outline" data-i18n="navGetStarted" data-longest="Get Started">Loslegen</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="langToggle" class="lang-btn" data-i18n="langBtn">EN</button>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero" id="home">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title" data-i18n="heroTitle">Stärken Sie Ihr Unternehmen mit <span class="text-accent">Premium Web-Lösungen</span></h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">Wir entwerfen, hosten und verwalten atemberaubende Websites maßgeschneidert für Unternehmen, damit Sie sich auf das konzentrieren können, was Sie am besten können.</p>
+                <div class="hero-cta">
+                    <a href="#booking" class="btn-primary" data-i18n="btnStart">Beratung buchen</a>
+                    <a href="#services" class="btn-secondary" data-i18n="btnExplore">Dienstleistungen Entdecken</a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in" style="transition-delay: 0.2s; margin-top: 60px;">
+                <img src="assets/hero.png" alt="Modern Web Browsers and Servers Illustration">
+            </div>
+        </header>
+
+        <section class="section packages" id="services">
+            <h2 class="section-title fade-in" data-i18n="titlePackages">Service-Pakete</h2>
+            <div class="packages-grid">
+                <div class="package-card fade-in">
+                    <h3 data-i18n="pkg1Title">Starter</h3>
+                    <p class="package-desc" data-i18n="pkg1Desc">Fokus auf Landing Pages & Local SEO</p>
+                    <ul class="package-features">
+                        <li data-i18n="pkg1Feat1">Benutzerdefiniertes Web-Design</li>
+                        <li data-i18n="pkg1Feat2">Responsive Entwicklung</li>
+                        <li data-i18n="pkg1Feat3">Basis SEO-Optimierung</li>
+                    </ul>
+                    <a href="#booking" class="btn-primary-outline" style="width: 100%; text-align: center" data-i18n="pkgBtnOutline">Kostenloses Erstgespräch</a>
+                </div>
+                <div class="package-card fade-in" style="transition-delay: 0.1s">
+                    <h3 data-i18n="pkg2Title">Business</h3>
+                    <p class="package-desc" data-i18n="pkg2Desc">Komplette Webpräsenz + Management</p>
+                    <ul class="package-features">
+                        <li data-i18n="pkg2Feat1">Alles im Starter-Paket</li>
+                        <li data-i18n="pkg2Feat2">CMS Integration</li>
+                        <li data-i18n="pkg2Feat3">Hosting & Monatliche Wartung</li>
+                    </ul>
+                    <a href="#booking" class="btn-primary-outline" style="width: 100%; text-align: center" data-i18n="pkgBtnOutline">Kostenlose Analyse buchen</a>
+                </div>
+                <div class="package-card fade-in" style="transition-delay: 0.2s">
+                    <h3 data-i18n="pkg3Title">Custom</h3>
+                    <p class="package-desc" data-i18n="pkg3Desc">E-Commerce & komplexe Apps</p>
+                    <ul class="package-features">
+                        <li data-i18n="pkg3Feat1">Maßgeschneiderte Web-Apps</li>
+                        <li data-i18n="pkg3Feat2">E-Commerce Systeme</li>
+                        <li data-i18n="pkg3Feat3">API-Integrationen</li>
+                    </ul>
+                    <a href="#booking" class="btn-primary-outline" style="width: 100%; text-align: center" data-i18n="pkgBtnOutline">Kostenloses Erstgespräch</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section portfolio" id="portfolio">
+            <h2 class="section-title fade-in" data-i18n="titlePortfolio">Projekte / Referenzen</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card fade-in">
+                    <div class="project-image-placeholder"></div>
+                    <div class="portfolio-card-content">
+                        <h3 data-i18n="proj1Title">Lokales Business Re-Design</h3>
+                        <p data-i18n="proj1Desc">Komplettes Redesign einer lokalen Bäckerei mit Integration eines Online-Bestellsystems zur Umsatzsteigerung.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in" style="transition-delay: 0.1s">
+                    <div class="project-image-placeholder"></div>
+                    <div class="portfolio-card-content">
+                        <h3 data-i18n="proj2Title">E-Commerce Plattform</h3>
+                        <p data-i18n="proj2Desc">Entwicklung einer skalierbaren E-Commerce-Plattform für einen wachsenden Einzelhändler mit automatisiertem Inventar-Management.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in" style="transition-delay: 0.2s">
+                    <div class="project-image-placeholder"></div>
+                    <div class="portfolio-card-content">
+                        <h3 data-i18n="proj3Title">SaaS Web-App</h3>
+                        <p data-i18n="proj3Desc">Komplexe SaaS-Applikation mit nutzerfreundlichem Dashboard und Echtzeit-Datenverarbeitung.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about" id="about">
+            <h2 class="section-title fade-in" data-i18n="titleAbout">Über Mich</h2>
+            <div class="about-content fade-in">
+                <p data-i18n="aboutText" style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px;">
+                    Hi, ich bin Dominik, ein 29-jähriger Informatikstudent. Ich habe D-Tech Solutions gegründet, um meine Leidenschaft für Technologie und Webentwicklung mit echten Unternehmensbedürfnissen zu verbinden. Mein Ziel ist es, moderne und leistungsstarke Weblösungen zu schaffen, die Ihnen helfen, in der digitalen Welt erfolgreich zu sein.
+                </p>
+            </div>
+        </section>
+
+        <section class="section why-us" id="why-us">
+            <h2 class="section-title fade-in" data-i18n="titleWhyUs">Warum Wir</h2>
+            <div class="why-us-content fade-in">
+                <ul class="features-list">
+                    <li>
+                        <strong data-i18n="why1Title">Fokus auf Ihren Erfolg:</strong> <span data-i18n="why1Desc">Wir verstehen Ihre einzigartigen Herausforderungen und Budgetbeschränkungen.</span>
+                    </li>
+                    <li>
+                        <strong data-i18n="why2Title">Alles-aus-einer-Hand Service:</strong> <span data-i18n="why2Desc">Sie müssen nicht mit mehreren Anbietern für Design, Domains und Hosting jonglieren.</span>
+                    </li>
+
+                    <li>
+                        <strong data-i18n="why4Title">Dedizierter Support:</strong> <span data-i18n="why4Desc">Wir sind immer nur eine E-Mail oder einen Anruf entfernt, wann immer Sie ein Update benötigen.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section booking" id="booking">
+            <h2 class="section-title fade-in" data-i18n="titleBooking" style="text-align: center; border-bottom: none; display: block; margin-bottom: 40px;">Bereit für den nächsten Schritt? Jetzt Erstgespräch buchen.</h2>
+            
+            <style>
+                .booking-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1.5fr;
+                    gap: 40px;
+                    align-items: start;
+                    max-width: 1100px;
+                    margin: 0 auto;
+                }
+                @media (max-width: 768px) {
+                    .booking-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+
+            <div class="booking-grid fade-in">
+                <div class="booking-text" style="background: var(--bg-card); padding: 32px; border-radius: 12px; border: 1px solid var(--border-color); backdrop-filter: blur(12px);">
+                    <h3 data-i18n="bookingDescTitle" style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 16px;">Potenzialanalyse</h3>
+                    <p data-i18n="bookingDescText" style="color: var(--text-muted); margin-bottom: 24px; font-size: 1.05rem;">Lass uns in einem unverbindlichen Gespräch herausfinden, wie wir deine digitale Präsenz auf das nächste Level heben können.</p>
+                    <ul style="list-style: none; padding: 0; color: var(--text-muted);">
+                        <li style="margin-bottom: 12px; display: flex; gap: 8px;"><span style="color: var(--primary);">✓</span> <span data-i18n="bookingFeat1">Analyse deiner aktuellen Website</span></li>
+                        <li style="margin-bottom: 12px; display: flex; gap: 8px;"><span style="color: var(--primary);">✓</span> <span data-i18n="bookingFeat2">Konkrete Handlungsempfehlungen</span></li>
+                        <li style="margin-bottom: 12px; display: flex; gap: 8px;"><span style="color: var(--primary);">✓</span> <span data-i18n="bookingFeat3">Vorstellung passender Lösungen</span></li>
+                    </ul>
+                </div>
+
+                <div class="booking-container">
+                    <!-- Cal inline embed code begins -->
+                    <div style="width:100%; min-height: 500px; overflow: hidden;" id="my-cal-inline-erstgesprach-potenzialanalyse"></div>
+                    <script type="text/javascript">
+                      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                    Cal("init", "erstgesprach-potenzialanalyse", {origin:"https://app.cal.com"});
+
+                      Cal.ns["erstgesprach-potenzialanalyse"]("inline", {
+                        elementOrSelector:"#my-cal-inline-erstgesprach-potenzialanalyse",
+                        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","language":"de"},
+                        calLink: "dominik-schenitzki-431sms/erstgesprach-potenzialanalyse",
+                      });
+
+                      Cal.ns["erstgesprach-potenzialanalyse"]("ui", {"cssVarsPerTheme":{"dark":{"cal-brand":"#0070F3"}},"hideEventTypeDetails":true,"layout":"month_view"});
+                      </script>
+                      <!-- Cal inline embed code ends -->
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <h2 class="section-title fade-in" data-i18n="titleContact">Kontakt</h2>
+            <div class="contact-content fade-in">
+                <p style="margin-bottom: 24px; color: var(--text-muted);" data-i18n="contactDesc">Bereit, Ihre digitale Präsenz zu verbessern? Kontaktieren Sie uns noch heute.</p>
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                    <input type="hidden" name="access_key" value="b105e343-1e04-4899-a9da-21a05eed1a1a">
+                    <input type="hidden" name="subject" value="Neue Projektanfrage via Landing Page">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <div class="form-group">
+                        <input type="text" id="formName" name="name" placeholder="Ihr Name" data-i18n-placeholder="formName" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="formEmail" name="email" placeholder="Ihre E-Mail" data-i18n-placeholder="formEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="formMessage" name="message" placeholder="Erzählen Sie uns von Ihrem Projekt..." data-i18n-placeholder="formMessage" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;" data-i18n="formBtn">Nachricht Senden</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p data-i18n="footerText">&copy; 2026 D-Tech Solutions. Alle Rechte vorbehalten.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

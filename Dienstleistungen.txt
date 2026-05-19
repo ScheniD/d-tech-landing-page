@@ -1,0 +1,57 @@
+================================================================================
+D-TECH SOLUTIONS - LEISTUNGSKATALOG & PITCH-GRUNDLAGE
+================================================================================
+
+1. WEBSEITEN-ERSTELLUNG (Core Service)
+--------------------------------------
+"Wir bauen nicht nur Webseiten, wir bauen digitale Verkaufsmaschinen."
+
+LEISTUNGSUMFANG:
+- Strategie-Gespräch: Analyse von Zielgruppe und Geschäftszielen.
+- Individuelles Design: Kein 08/15-Baukasten, sondern auf die Marke zugeschnitten.
+- Mobile First: Perfekte Darstellung auf Smartphones (70% des Traffics).
+- SEO-Grundoptimierung: Google-freundliche Struktur und schnelle Ladezeiten.
+- Conversion-Fokus: Klare Handlungsaufforderungen (Buttons, Formulare), um Besucher zu Kunden zu machen.
+
+PITCH-ARGUMENT:
+"Eine Webseite von D-Tech Solutions ist kein Kostenfaktor, sondern ein Mitarbeiter, der 24/7 für Sie verkauft."
+
+2. ZUVERLÄSSIGES HOSTING & PERFORMANCE
+--------------------------------------
+"Ihre Webseite verdient ein sicheres und schnelles Zuhause."
+
+LEISTUNGSUMFANG:
+- Setup & Konfiguration: Wir wählen den passenden Hoster (Hostinger, Vercel, etc.).
+- SSL-Zertifikate: Verschlüsselung für Sicherheit und Kundenvertrauen.
+- Domain-Management: Wir kümmern uns um den Umzug oder die Neuregistrierung.
+- High-Performance: Optimierung der Server-Antwortzeiten für bessere Google-Rankings.
+
+PITCH-ARGUMENT:
+"Nichts ist teurer als eine langsame Webseite. Wir sorgen dafür, dass Ihre Kunden nicht abspringen, bevor die Seite geladen hat."
+
+3. LAUFENDE VERWALTUNG & MANAGEMENT
+------------------------------------
+"Konzentrieren Sie sich auf Ihr Geschäft – wir kümmern uns um die Technik."
+
+LEISTUNGSUMFANG:
+- Regelmäßige Backups: Schutz vor Datenverlust.
+- Sicherheits-Updates: Schutz vor Hackerangriffen und Malware.
+- Inhalts-Updates: Sie schicken uns ein Bild oder Text, wir pflegen es ein.
+- Monitoring: 24/7 Überwachung der Erreichbarkeit.
+
+PITCH-ARGUMENT:
+"Technik ändert sich täglich. Mit unserem Management-Service bleibt Ihre Seite immer auf dem neuesten Stand, sicher und funktionsfähig, ohne dass Sie einen Finger rühren müssen."
+
+4. ZUSATZLEISTUNGEN (Upsells)
+-----------------------------
+- Google Business Profil Optimierung (Local SEO).
+- Einrichtung von Business-E-Mail-Adressen.
+- Analyse & Reporting (Besucherstatistiken monatlich).
+
+================================================================================
+PREISSTRATEGIE (Vorschlag für das Gespräch)
+================================================================================
+- Einmalprojekt (Erstellung): Ab 1.200 € (je nach Umfang).
+- Monatliche Betreuung (Hosting & Management): 49 € - 99 € / Monat.
+  -> Sichert stabiles Einkommen für D-Tech Solutions.
+================================================================================
