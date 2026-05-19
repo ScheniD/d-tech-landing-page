@@ -260,7 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (track && slides.length > 0) {
         let currentSlideIndex = 0;
-        let autoPlayInterval;
 
         const updateSlider = () => {
             const slideWidth = slides[0].offsetWidth; 
@@ -287,43 +286,17 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                nextSlide();
-                resetAutoPlay();
-            });
+            nextBtn.addEventListener('click', nextSlide);
         }
 
         if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                prevSlide();
-                resetAutoPlay();
-            });
-        }
-
-        const startAutoPlay = () => {
-            autoPlayInterval = setInterval(nextSlide, 5000); // 5 seconds
-        };
-
-        const stopAutoPlay = () => {
-            clearInterval(autoPlayInterval);
-        };
-
-        const resetAutoPlay = () => {
-            stopAutoPlay();
-            startAutoPlay();
-        };
-
-        // Pause on hover
-        if (sliderContainer) {
-            sliderContainer.addEventListener('mouseenter', stopAutoPlay);
-            sliderContainer.addEventListener('mouseleave', startAutoPlay);
+            prevBtn.addEventListener('click', prevSlide);
         }
 
         window.addEventListener('resize', updateSlider);
         
         // Initial setup
         updateSlider();
-        startAutoPlay();
     }
 
     // Service Cards Accordion
