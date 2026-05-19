@@ -128,7 +128,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    let currentLang = localStorage.getItem('selectedLang') || 'de';
+    let currentLang = 'de';
+    try {
+        currentLang = localStorage.getItem('selectedLang') || 'de';
+    } catch (e) {
+        console.warn('LocalStorage not available');
+    }
     const langBtn = document.getElementById('langToggle');
 
     function updateLanguage() {
@@ -149,7 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (metaDesc) metaDesc.content = t['desc'];
         
         document.documentElement.lang = currentLang;
-        localStorage.setItem('selectedLang', currentLang);
+        try {
+            localStorage.setItem('selectedLang', currentLang);
+        } catch (e) {}
     }
 
     // Initial translation call
@@ -177,49 +184,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
-    mobileMenu.addEventListener('click', () => {
-        if (navLinks.style.display === 'flex') {
-            navLinks.style.display = 'none';
-        } else {
-            navLinks.style.display = 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.width = '100%';
-            navLinks.style.background = 'rgba(10, 10, 15, 0.95)';
-            navLinks.style.padding = '20px 0';
-            navLinks.style.backdropFilter = 'blur(10px)';
-        }
-    });
-
-    // Scroll Animations (Intersection Observer)
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'rgba(10, 10, 15, 0.95)';
+                navLinks.style.padding = '20px 0';
+                navLinks.style.backdropFilter = 'blur(10px)';
             }
         });
-    }, observerOptions);
-
-    fadeElements.forEach(element => {
-        observer.observe(element);
-    });
-
-    // Force visible for hero elements immediately if they are in viewport
-    setTimeout(() => {
-        document.querySelectorAll('.hero .fade-in').forEach(el => {
-            el.classList.add('visible');
-        });
-    }, 100);
+    }
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -235,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 
                 // Close mobile menu if open
-                if (window.innerWidth <= 992) {
+                if (window.innerWidth <= 992 && navLinks) {
                     navLinks.style.display = 'none';
                 }
             }
