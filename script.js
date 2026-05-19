@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let autoPlayInterval;
 
         const updateSlider = () => {
-            const slideWidth = window.innerWidth; 
+            const slideWidth = slides[0].offsetWidth; 
             track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
             
             // Update active class for animations
