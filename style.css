@@ -497,6 +497,12 @@ footer {
     position: relative;
 }
 
+/* Safety visibility for hero */
+.hero-content, .hero-visual {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
 /* Animations */
 .fade-in {
     opacity: 0;
