@@ -256,33 +256,74 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = Array.from(document.querySelectorAll('.portfolio-slide'));
     const nextBtn = document.querySelector('.slider-btn.next');
     const prevBtn = document.querySelector('.slider-btn.prev');
+    const sliderContainer = document.querySelector('.portfolio-slider-container');
     
     if (track && slides.length > 0) {
         let currentSlideIndex = 0;
+        let autoPlayInterval;
 
         const updateSlider = () => {
-            const slideWidth = track.clientWidth; // Use track width for accuracy
-            track.style.transform = `translateX(-${currentSlideIndex * (slideWidth + 40)}px)`; 
+            const slideWidth = window.innerWidth; 
+            track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+            
+            // Update active class for animations
+            slides.forEach((slide, index) => {
+                if (index === currentSlideIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        };
+
+        const nextSlide = () => {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateSlider();
+        };
+
+        const prevSlide = () => {
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            updateSlider();
         };
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-                updateSlider();
+                nextSlide();
+                resetAutoPlay();
             });
         }
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-                updateSlider();
+                prevSlide();
+                resetAutoPlay();
             });
+        }
+
+        const startAutoPlay = () => {
+            autoPlayInterval = setInterval(nextSlide, 5000); // 5 seconds
+        };
+
+        const stopAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+        };
+
+        const resetAutoPlay = () => {
+            stopAutoPlay();
+            startAutoPlay();
+        };
+
+        // Pause on hover
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+            sliderContainer.addEventListener('mouseleave', startAutoPlay);
         }
 
         window.addEventListener('resize', updateSlider);
         
-        // Initial set
-        setTimeout(updateSlider, 100); 
+        // Initial setup
+        updateSlider();
+        startAutoPlay();
     }
 
     // Service Cards Accordion
