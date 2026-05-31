@@ -52,8 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
             pkg3Feat1: "Maßgeschneiderte Web-Apps",
             pkg3Feat2: "E-Commerce Systeme",
             pkg3Feat3: "API-Integrationen",
-            pkgBtnPrimary: "Kostenlose Analyse buchen",
-            pkgBtnOutline: "Kostenlose Analyse buchen",
+            pkgBtnStarter: "Kostenloses Erstgespräch",
+            pkgBtnBusiness: "Kostenlose Analyse buchen",
+            pkgBtnCustom: "Kostenloses Erstgespräch",
+            backLink: "← Zurück zur Startseite",
             titleBooking: "Bereit für den nächsten Schritt? Jetzt Erstgespräch buchen.",
             bookingDescTitle: "Potenzialanalyse",
             bookingDescText: "Lass uns in einem unverbindlichen Gespräch herausfinden, wie wir deine digitale Präsenz auf das nächste Level heben können.",
@@ -127,8 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
             pkg3Feat1: "Tailored Web Apps",
             pkg3Feat2: "E-Commerce Systems",
             pkg3Feat3: "API Integrations",
-            pkgBtnPrimary: "Book a Free Analysis",
-            pkgBtnOutline: "Book a Free Analysis",
+            pkgBtnStarter: "Book a Free Consultation",
+            pkgBtnBusiness: "Book a Free Analysis",
+            pkgBtnCustom: "Book a Free Consultation",
+            backLink: "← Back to Homepage",
             titleBooking: "Ready for the next step? Book an initial consultation now.",
             bookingDescTitle: "Potential Analysis",
             bookingDescText: "Let's find out in a no-obligation conversation how we can take your digital presence to the next level.",
@@ -185,6 +189,23 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             localStorage.setItem('selectedLang', currentLang);
         } catch (e) {}
+
+        // Sync Cal.com widget language dynamically if present
+        if (window.Cal && window.Cal.ns && window.Cal.ns["erstgesprach-potenzialanalyse"]) {
+            try {
+                window.Cal.ns["erstgesprach-potenzialanalyse"]("inline", {
+                    elementOrSelector: "#my-cal-inline-erstgesprach-potenzialanalyse",
+                    config: {
+                        "layout": "month_view",
+                        "useSlotsViewOnSmallScreen": "true",
+                        "language": currentLang
+                    },
+                    calLink: "dominik-schenitzki-431sms/erstgesprach-potenzialanalyse",
+                });
+            } catch (e) {
+                console.error("Failed to update Cal.com widget language", e);
+            }
+        }
     }
 
     // Initial translation call
@@ -212,21 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
-    if (mobileMenu) {
+    if (mobileMenu && navLinks) {
         mobileMenu.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(10, 10, 15, 0.95)';
-                navLinks.style.padding = '20px 0';
-                navLinks.style.backdropFilter = 'blur(10px)';
-            }
+            navLinks.classList.toggle('active');
         });
     }
 
@@ -244,8 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 
                 // Close mobile menu if open
-                if (window.innerWidth <= 992 && navLinks) {
-                    navLinks.style.display = 'none';
+                if (navLinks) {
+                    navLinks.classList.remove('active');
                 }
             }
         });

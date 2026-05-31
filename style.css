@@ -152,7 +152,7 @@ h1, h2, h3, h4 {
     content: attr(data-longest);
     height: 0;
     visibility: hidden;
-    overflow: hidden;
+    overflow: visible;
     pointer-events: none;
     user-select: none;
 }
@@ -288,7 +288,7 @@ h1, h2, h3, h4 {
     padding: 40px 32px;
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
@@ -426,7 +426,7 @@ footer {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    overflow: hidden; /* Clips horizontal slides */
+    overflow: visible; /* Clips horizontal slides */
     padding: 60px 0 100px 0; /* Extra space at bottom for phone breakout */
 }
 
@@ -465,7 +465,7 @@ footer {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -479,7 +479,7 @@ footer {
 
 .browser-content {
     aspect-ratio: 16/10;
-    overflow: hidden;
+    overflow: visible;
     background: #000;
 }
 
@@ -501,7 +501,7 @@ footer {
     right: -30px;
     bottom: -60px; /* Breakout! */
     box-shadow: 0 40px 80px rgba(0,0,0,0.9);
-    overflow: hidden;
+    overflow: visible;
     z-index: 10;
 }
 
@@ -728,4 +728,29 @@ footer {
     .hero-cta {
         flex-direction: column;
     }
+}
+
+/* Mobile menu open state */
+@media (max-width: 992px) {
+    .nav-links.active {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(10, 10, 15, 0.95) !important;
+        padding: 20px 0 !important;
+        backdrop-filter: blur(10px) !important;
+    }
+}
+
+/* Language-based content visibility for legal pages */
+html[lang="de"] #en-content,
+html[lang="de"] .legal-divider {
+    display: none;
+}
+html[lang="en"] #de-content,
+html[lang="en"] .legal-divider {
+    display: none;
 }
