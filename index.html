@@ -8,9 +8,55 @@
     <meta name="description" id="meta-desc" content="Premium Webseiten-Erstellung, zuverlässiges Hosting und Experten-Management für Unternehmen.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </noscript>
+    <style>
+        :root {
+            --bg-dark: #0B0E14;
+            --bg-card: rgba(255, 255, 255, 0.015);
+            --bg-card-hover: rgba(255, 255, 255, 0.06);
+            --text-main: #FFFFFF;
+            --text-muted: #8899A6;
+            --primary: #0070F3;
+            --border-color: rgba(255, 255, 255, 0.05);
+            --font-main: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero {
+            padding: 140px 20px 60px;
+            text-align: center;
+            position: relative;
+        }
+    </style>
 </head>
 
 <body>
@@ -320,22 +366,14 @@
                     </ul>
                 </div>
 
-                <div class="booking-container">
-                    <!-- Cal inline embed code begins -->
-                    <div style="width:100%; min-height: 500px; overflow: visible;" id="my-cal-inline-erstgesprach-potenzialanalyse"></div>
-                    <script type="text/javascript">
-                      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-                    Cal("init", "erstgesprach-potenzialanalyse", {origin:"https://app.cal.com"});
-
-                      Cal.ns["erstgesprach-potenzialanalyse"]("inline", {
-                        elementOrSelector:"#my-cal-inline-erstgesprach-potenzialanalyse",
-                        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","language":"de"},
-                        calLink: "dominik-schenitzki-431sms/erstgesprach-potenzialanalyse",
-                      });
-
-                      Cal.ns["erstgesprach-potenzialanalyse"]("ui", {"cssVarsPerTheme":{"dark":{"cal-brand":"#0070F3"}},"hideEventTypeDetails":true,"layout":"month_view"});
-                      </script>
-                      <!-- Cal inline embed code ends -->
+                <div class="booking-container" id="booking-widget-container" style="position: relative; min-height: 500px; display: flex; align-items: center; justify-content: center; width: 100%;">
+                    <div class="booking-placeholder" id="booking-placeholder" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; border-radius: 16px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.015); min-height: 500px;">
+                        <div class="calendar-icon" style="font-size: 3.5rem; margin-bottom: 20px;">📅</div>
+                        <h3 data-i18n="bookingPlaceholderTitle" style="font-size: 1.6rem; margin-bottom: 12px; font-weight: 700; color: var(--text-main);">Interaktiver Kalender</h3>
+                        <p data-i18n="bookingPlaceholderDesc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px; max-width: 380px; line-height: 1.6;">Wählen Sie Ihren Wunschtermin direkt in unserem interaktiven Kalender aus. Klicken Sie unten, um freie Termine zu laden.</p>
+                        <button class="btn-primary" id="load-booking-btn" data-i18n="bookingPlaceholderBtn">Jetzt Kalender laden</button>
+                    </div>
+                    <div style="width:100%; min-height: 500px; overflow: visible; display: none;" id="my-cal-inline-erstgesprach-potenzialanalyse"></div>
                 </div>
             </div>
         </section>

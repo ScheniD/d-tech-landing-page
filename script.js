@@ -86,6 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
             formEmail: "Ihre E-Mail",
             formMessage: "Erzählen Sie uns von Ihrem Projekt...",
             formBtn: "Nachricht Senden",
+            bookingPlaceholderTitle: "Interaktiver Kalender",
+            bookingPlaceholderDesc: "Wählen Sie Ihren Wunschtermin direkt in unserem interaktiven Kalender aus. Klicken Sie unten, um freie Termine zu laden.",
+            bookingPlaceholderBtn: "Jetzt Kalender laden",
             footerText: "&copy; 2026 D-Tech Solutions. Alle Rechte vorbehalten.",
             langBtn: "EN"
         },
@@ -175,6 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
             formEmail: "Your Email",
             formMessage: "Tell us about your project...",
             formBtn: "Send Message",
+            bookingPlaceholderTitle: "Interactive Calendar",
+            bookingPlaceholderDesc: "Select your preferred date directly in our interactive calendar. Click below to load open slots.",
+            bookingPlaceholderBtn: "Load Calendar Now",
             footerText: "&copy; 2026 D-Tech Solutions. All rights reserved.",
             footerImpressum: "Legal Notice",
             footerPrivacy: "Privacy Policy",
@@ -385,6 +391,67 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 4000);
             });
         });
+    }
+
+    // Cal.com Lazy Loading (On-Click Injection)
+    const loadBookingBtn = document.getElementById('load-booking-btn');
+    let calWidgetLoaded = false;
+    
+    function loadCalWidget() {
+        if (calWidgetLoaded) return;
+        calWidgetLoaded = true;
+        
+        const placeholder = document.getElementById('booking-placeholder');
+        const widgetDiv = document.getElementById('my-cal-inline-erstgesprach-potenzialanalyse');
+        
+        if (placeholder) placeholder.style.display = 'none';
+        if (widgetDiv) widgetDiv.style.display = 'block';
+        
+        // Inject Cal.com script and initialize
+        (function (C, A, L) { 
+            let p = function (a, ar) { a.q.push(ar); }; 
+            let d = C.document; 
+            C.Cal = C.Cal || function () { 
+                let cal = C.Cal; 
+                let ar = arguments; 
+                if (!cal.loaded) { 
+                    cal.ns = {}; 
+                    cal.q = cal.q || []; 
+                    d.head.appendChild(d.createElement("script")).src = A; 
+                    cal.loaded = true; 
+                } 
+                if (ar[0] === L) { 
+                    const api = function () { p(api, arguments); }; 
+                    const namespace = ar[1]; 
+                    api.q = api.q || []; 
+                    if(typeof namespace === "string"){
+                        cal.ns[namespace] = cal.ns[namespace] || api;
+                        p(cal.ns[namespace], ar);
+                        p(cal, ["initNamespace", namespace]);
+                    } else p(cal, ar); 
+                    return;
+                } 
+                p(cal, ar); 
+            }; 
+        })(window, "https://app.cal.com/embed/embed.js", "init");
+        
+        Cal("init", "erstgesprach-potenzialanalyse", {origin:"https://app.cal.com"});
+        
+        Cal.ns["erstgesprach-potenzialanalyse"]("inline", {
+            elementOrSelector:"#my-cal-inline-erstgesprach-potenzialanalyse",
+            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","language": currentLang},
+            calLink: "dominik-schenitzki-431sms/erstgesprach-potenzialanalyse",
+        });
+        
+        Cal.ns["erstgesprach-potenzialanalyse"]("ui", {
+            "cssVarsPerTheme":{"dark":{"cal-brand":"#0070F3"}},
+            "hideEventTypeDetails":true,
+            "layout":"month_view"
+        });
+    }
+
+    if (loadBookingBtn) {
+        loadBookingBtn.addEventListener('click', loadCalWidget);
     }
 
     // Intersection Observer for Scroll Reveal Animations
