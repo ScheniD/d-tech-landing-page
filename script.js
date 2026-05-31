@@ -43,15 +43,26 @@ document.addEventListener('DOMContentLoaded', () => {
             pkg1Feat2: "Responsive Entwicklung",
             pkg1Feat3: "Basis SEO-Optimierung",
             pkg2Title: "Business",
-            pkg2Desc: "Komplette Webpräsenz + Management",
+            pkg2Desc: "Rundum-Sorglos: All-in-One Webpräsenz & Management (Lösung für Zeitmangel)",
             pkg2Feat1: "Alles im Starter-Paket",
             pkg2Feat2: "CMS Integration",
-            pkg2Feat3: "Hosting & Monatliche Wartung",
+            pkg2Feat3: "All-in-One: High-Speed Hosting & Wartung",
             pkg3Title: "Custom",
             pkg3Desc: "E-Commerce & komplexe Apps",
             pkg3Feat1: "Maßgeschneiderte Web-Apps",
             pkg3Feat2: "E-Commerce Systeme",
             pkg3Feat3: "API-Integrationen",
+            titleLocalServices: "Fokus: Lokale Dienstleister & Praxen",
+            localVetTitle: "Tierarztpraxen",
+            localVetDesc: "Eine ruhige, vertrauensvolle Website, die Tierbesitzern sofort Kompetenz und Sicherheit vermittelt. Integriertes Booking spart Ihrem Team Zeit am Telefon.",
+            localGroomerTitle: "Hundesalons",
+            localGroomerDesc: "Ein stilvolles, modernes Design, das die Qualität Ihrer Pflege widerspiegelt. Automatisierte Terminerinnerungen reduzieren Ausfälle auf null.",
+            localSEOTitle: "Lokales SEO",
+            localSEODesc: "Optimiert für die lokale Suche in Google & Maps, damit Tierbesitzer in Ihrer Nähe Sie sofort finden, wenn es darauf ankommt.",
+            trustTitle: "Der Informatik-Studenten Bonus",
+            trustPoint1: "<strong>Modernstes Wissen:</strong> Direkt aus dem universitären Studium in Ihre Web-Architektur.",
+            trustPoint2: "<strong>Ehrlichkeit & Fairness:</strong> Transparente studentische Preise ohne aufgeblähten Agentur-Overhead.",
+            trustPoint3: "<strong>Zukunftssicherer Code:</strong> Strukturierte Programmierung nach höchsten akademischen Softwarestandards.",
             pkgBtnStarter: "Kostenloses Erstgespräch",
             pkgBtnBusiness: "Kostenlose Analyse buchen",
             pkgBtnCustom: "Kostenloses Erstgespräch",
@@ -120,15 +131,26 @@ document.addEventListener('DOMContentLoaded', () => {
             pkg1Feat2: "Responsive Development",
             pkg1Feat3: "Basic SEO Optimization",
             pkg2Title: "Business",
-            pkg2Desc: "Complete Web Presence + Management",
+            pkg2Desc: "Peace of Mind: All-in-One Web Presence & Management (Time-saver)",
             pkg2Feat1: "Everything in Starter",
             pkg2Feat2: "CMS Integration",
-            pkg2Feat3: "Hosting & Monthly Maintenance",
+            pkg2Feat3: "All-in-One: High-Speed Hosting & Maintenance",
             pkg3Title: "Custom",
             pkg3Desc: "E-Commerce & Complex Apps",
             pkg3Feat1: "Tailored Web Apps",
             pkg3Feat2: "E-Commerce Systems",
             pkg3Feat3: "API Integrations",
+            titleLocalServices: "Focus: Local Service Providers & Clinics",
+            localVetTitle: "Veterinary Clinics",
+            localVetDesc: "A calm, trustworthy website that instantly conveys competence and reassurance to pet owners. Integrated booking saves your team hours on the phone.",
+            localGroomerTitle: "Dog Salons",
+            localGroomerDesc: "A stylish, modern design that reflects the high quality of your grooming services. Automated appointment reminders reduce no-shows to zero.",
+            localSEOTitle: "Local SEO",
+            localSEODesc: "Optimized for local search on Google & Maps so that pet owners in your area find you instantly when it matters most.",
+            trustTitle: "The CS Student Advantage",
+            trustPoint1: "<strong>Cutting-edge Knowledge:</strong> Directly integrated from university studies into your web architecture.",
+            trustPoint2: "<strong>Honesty & Fairness:</strong> Transparent student-pricing without bloated agency overhead.",
+            trustPoint3: "<strong>Future-proof Code:</strong> Structured programming following the highest academic software standards.",
             pkgBtnStarter: "Book a Free Consultation",
             pkgBtnBusiness: "Book a Free Analysis",
             pkgBtnCustom: "Book a Free Consultation",
@@ -362,6 +384,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.background = '';
                 }, 4000);
             });
+    // Intersection Observer for Scroll Reveal Animations
+    const revealOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.05
+    };
+    
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
         });
-    }
+    }, revealOptions);
+    
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
 });

@@ -754,3 +754,138 @@ html[lang="en"] #de-content,
 html[lang="en"] .legal-divider {
     display: none;
 }
+
+/* Glassmorphism Styling */
+.package-card,
+.project-info,
+.about-content,
+.why-us-content,
+.booking-text,
+.local-card,
+.trust-card {
+    background: rgba(255, 255, 255, 0.015) !important;
+    backdrop-filter: blur(16px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.package-card:hover,
+.project-info:hover,
+.about-content:hover,
+.why-us-content:hover,
+.local-card:hover,
+.trust-card:hover {
+    transform: translateY(-5px) !important;
+    border-color: rgba(0, 112, 243, 0.3) !important;
+    box-shadow: 0 20px 40px rgba(0, 112, 243, 0.15) !important;
+}
+
+/* Local Services Bento Grid */
+.local-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.local-card {
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.local-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.local-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+.local-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.about-content {
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+.trust-card {
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(0, 112, 243, 0.2) !important;
+}
+
+.trust-badge {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.trust-card h3 {
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* Booking text adjustment */
+.booking-text {
+    padding: 32px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Scroll Reveal Animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Rules for New Sections */
+@media (max-width: 992px) {
+    .local-services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
