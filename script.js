@@ -384,6 +384,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.background = '';
                 }, 4000);
             });
+        });
+    }
+
     // Intersection Observer for Scroll Reveal Animations
     const revealOptions = {
         root: null,
