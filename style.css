@@ -785,7 +785,7 @@ html[lang="en"] .legal-divider {
     box-shadow: 0 25px 50px rgba(0, 112, 243, 0.25) !important;
 }
 
-/* Local Services Bento Grid (Tier-Fachbetriebe Focus with Warm Accents) */
+/* Local Services Bento Grid (KMU & Lokale Dienstleister Focus with Warm Accents) */
 .local-services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
