@@ -780,6 +780,7 @@ html[lang="en"] .legal-divider {
 .why-us-content:hover,
 .local-card:hover,
 .trust-card:hover,
+.booking-text:hover,
 .booking-placeholder:hover {
     transform: translateY(-8px) scale(1.02) !important;
     border-color: rgba(0, 112, 243, 0.4) !important;
@@ -916,8 +917,12 @@ html[lang="en"] .legal-divider {
     .local-services-grid .local-card:nth-child(3) {
         animation: float 10s ease-in-out infinite;
     }
-    .trust-card {
+    .trust-card,
+    .booking-text {
         animation: float 9s ease-in-out infinite;
+    }
+    .booking-placeholder {
+        animation: float-reverse 10s ease-in-out infinite;
     }
 
     /* Logo animation */
