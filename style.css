@@ -426,13 +426,13 @@ footer {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    overflow: visible; /* Clips horizontal slides */
-    padding: 60px 0 100px 0; /* Extra space at bottom for phone breakout */
+    overflow: hidden; /* Prevent horizontal overflow */
+    padding: 60px 0 30px 0;
 }
 
 .portfolio-track-wrapper {
     width: 100%;
-    overflow: visible; /* Let children breakout vertically */
+    overflow: hidden; /* Clip horizontal slides */
 }
 
 .portfolio-track {
@@ -443,7 +443,7 @@ footer {
 .portfolio-slide {
     flex: 0 0 100%;
     width: 100%;
-    padding: 0 100px;
+    padding: 0 100px 70px 100px; /* 70px bottom padding to contain absolute phone mockup */
     position: relative;
     box-sizing: border-box;
 }
@@ -644,10 +644,10 @@ footer {
 
 @media (max-width: 768px) {
     .portfolio-slider-container {
-        padding: 40px 0 60px 0;
+        padding: 40px 0 30px 0;
     }
     .portfolio-slide {
-        padding: 0 45px;
+        padding: 0 45px 30px 45px;
     }
     .project-showcase {
         gap: 50px;
@@ -691,7 +691,7 @@ footer {
 
 @media (max-width: 480px) {
     .portfolio-slide {
-        padding: 0 35px;
+        padding: 0 35px 25px 35px;
     }
     .slider-btn {
         width: 35px;
