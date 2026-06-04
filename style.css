@@ -915,9 +915,11 @@ html[lang="en"] .legal-divider {
 }
 
 .local-card-icon {
-    font-size: 2.5rem;
     margin-bottom: 20px;
     filter: drop-shadow(0 0 8px rgba(0, 112, 243, 0.35));
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
 }
 
 .local-card h3 {
