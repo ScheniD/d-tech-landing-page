@@ -728,13 +728,36 @@ footer {
     margin: 0 auto;
 }
 
-/* Why Us Section */
+/* Why Us Section Grid Layout */
+.why-us-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
 .why-us-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 40px;
-    backdrop-filter: blur(12px);
+}
+
+.google-review-card {
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+@media (max-width: 992px) {
+    .why-us-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 /* Safety visibility for hero */
@@ -848,6 +871,7 @@ html[lang="en"] .legal-divider {
 .booking-text,
 .local-card,
 .trust-card,
+.google-review-card,
 .booking-placeholder {
     background: rgba(255, 255, 255, 0.02) !important;
     backdrop-filter: blur(12px) saturate(120%) !important;
@@ -866,6 +890,7 @@ html[lang="en"] .legal-divider {
 .local-card:hover,
 .trust-card:hover,
 .booking-text:hover,
+.google-review-card:hover,
 .booking-placeholder:hover {
     transform: translateY(-8px) scale(1.02) !important;
     border-color: rgba(0, 112, 243, 0.4) !important;
@@ -1000,10 +1025,12 @@ html[lang="en"] .legal-divider {
         animation: float 10s ease-in-out infinite;
     }
     .trust-card,
+    .why-us-content,
     .booking-text {
         animation: float 9s ease-in-out infinite;
     }
-    .booking-placeholder {
+    .booking-placeholder,
+    .google-review-card {
         animation: float-reverse 10s ease-in-out infinite;
     }
 
