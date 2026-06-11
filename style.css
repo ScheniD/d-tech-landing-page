@@ -99,6 +99,13 @@ h1, h2, h3, h4 {
     z-index: 1000;
     background: rgba(11, 14, 20, 0.8);
     backdrop-filter: blur(12px);
+    transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(11, 14, 20, 0.95);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
 }
 
 .nav-container {
@@ -417,7 +424,41 @@ footer {
 }
 
 .footer-links a:hover {
+    color: var(--text-main);
+}
+
+/* Footer Social Links */
+.footer-socials {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.footer-socials a {
+    color: var(--text-muted);
+    transition: color 0.25s ease, transform 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-socials a:hover {
     color: var(--primary);
+    transform: translateY(-3px);
+    background: rgba(0, 112, 243, 0.1);
+    border-color: rgba(0, 112, 243, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 112, 243, 0.2);
+}
+
+.footer-socials a svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* Final Portfolio Showcase Fix - Clean Version */
@@ -894,7 +935,8 @@ html[lang="en"] .legal-divider {
 .booking-placeholder:hover {
     transform: translateY(-8px) scale(1.02) !important;
     border-color: rgba(0, 112, 243, 0.4) !important;
-    box-shadow: 0 25px 50px rgba(0, 112, 243, 0.25) !important;
+    box-shadow: 0 25px 50px rgba(0, 112, 243, 0.25),
+                0 0 40px rgba(0, 112, 243, 0.1) !important;
 }
 
 /* Local Services Bento Grid (Local Businesses & Practices Focus with Blue Accents) */
@@ -980,15 +1022,21 @@ html[lang="en"] .legal-divider {
 /* Scroll Reveal Animations */
 .scroll-reveal {
     opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .scroll-reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Staggered animation delays for children */
+.scroll-reveal:nth-child(1) { transition-delay: 0.1s; }
+.scroll-reveal:nth-child(2) { transition-delay: 0.2s; }
+.scroll-reveal:nth-child(3) { transition-delay: 0.3s; }
+.scroll-reveal:nth-child(4) { transition-delay: 0.4s; }
 
 /* Responsive Rules for New Sections */
 @media (max-width: 992px) {
@@ -1040,5 +1088,73 @@ html[lang="en"] .legal-divider {
     .logo img {
         animation: float 7s ease-in-out infinite;
     }
+}
+
+/* ===== ENHANCEMENTS: Social Links, Glow & Interactivity ===== */
+
+/* Subtle cursor glow effect */
+body {
+    cursor: default;
+}
+
+/* Smooth scroll reveal for package cards */
+.packages-grid .package-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Enhanced button pulse on hero */
+.hero-cta .btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-cta .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.hero-cta .btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Portfolio slider enhancements */
+.portfolio-slide {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Selection color */
+::selection {
+    background: rgba(0, 112, 243, 0.3);
+    color: var(--text-main);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 112, 243, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 112, 243, 0.5);
 }
 

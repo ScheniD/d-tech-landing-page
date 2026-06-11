@@ -256,12 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        if (window.scrollY > 80) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    });
+    }, { passive: true });
 
     // Mobile menu toggle
     const mobileMenu = document.querySelector('.mobile-menu-toggle');
@@ -460,11 +460,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loadBookingBtn.addEventListener('click', loadCalWidget);
     }
 
-    // Intersection Observer for Scroll Reveal Animations
+    // Intersection Observer for Scroll Reveal Animations (optimized)
     const revealOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.05
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
     };
     
     const revealObserver = new IntersectionObserver((entries, observer) => {
