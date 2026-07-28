@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ablaufplan - Standesamtliche Hochzeit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 210mm;
+      height: 297mm;
+      background-color: #FDFBF7;
+      font-family: 'Montserrat', sans-serif;
+      color: #333835;
+      position: relative;
+      overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Page Border & Frame */
+    .page-frame {
+      position: absolute;
+      top: 10mm;
+      left: 10mm;
+      right: 10mm;
+      bottom: 10mm;
+      border: 1px solid #D6C5AD;
+      outline: 2px solid #FDFBF7;
+      outline-offset: -5px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .corner-decor {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 1.5px solid #B89B72;
+      z-index: 11;
+    }
+    .corner-tl { top: 12mm; left: 12mm; border-right: none; border-bottom: none; }
+    .corner-tr { top: 12mm; right: 12mm; border-left: none; border-bottom: none; }
+    .corner-bl { bottom: 12mm; left: 12mm; border-right: none; border-top: none; }
+    .corner-br { bottom: 12mm; right: 12mm; border-left: none; border-top: none; }
+
+    /* Content Container */
+    .content-wrapper {
+      padding: 16mm 18mm 14mm 18mm;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 5mm;
+    }
+
+    .header-icon {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 2mm auto;
+    }
+
+    .header-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #8C7355;
+      margin-bottom: 1mm;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26pt;
+      font-weight: 600;
+      color: #2D4336;
+      letter-spacing: 1px;
+      line-height: 1.1;
+      margin-bottom: 2mm;
+    }
+
+    .location-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background-color: #EFECE6;
+      padding: 3px 12px;
+      border-radius: 12px;
+      font-size: 8pt;
+      font-weight: 500;
+      color: #4A5D52;
+      border: 1px solid #E0DAD0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 3.5mm auto;
+      width: 60%;
+    }
+
+    .divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: linear-gradient(to right, transparent, #C5B398, transparent);
+    }
+
+    .divider-dot {
+      width: 4px;
+      height: 4px;
+      background-color: #B89B72;
+      transform: rotate(45deg);
+    }
+
+    /* Timeline Grid */
+    .timeline {
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 24px;
+    }
+
+    .timeline-vertical-line {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      bottom: 10px;
+      width: 1.5px;
+      background: linear-gradient(to bottom, #C5B398 0%, #3D5A49 30%, #3D5A49 70%, #C5B398 100%);
+      opacity: 0.6;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.8mm;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: -24px;
+      top: 3px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #FDFBF7;
+      border: 2px solid #3D5A49;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .timeline-node::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #B89B72;
+    }
+
+    .item-card {
+      background: #FFFFFF;
+      border: 1px solid #E8E2D9;
+      border-left: 3.5px solid #3D5A49;
+      border-radius: 6px;
+      padding: 7px 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .item-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .item-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #B89B72;
+    }
+
+    .item-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13.5pt;
+      font-weight: 700;
+      color: #2D4336;
+      letter-spacing: 0.2px;
+    }
+
+    .time-badge {
+      background-color: #F4F1EA;
+      color: #3D5A49;
+      border: 1px solid #DFD9CE;
+      font-size: 7.5pt;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+    }
+
+    .item-details {
+      list-style: none;
+      padding-left: 18px;
+    }
+
+    .item-details li {
+      position: relative;
+      font-size: 8.2pt;
+      color: #4A504C;
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+
+    .item-details li:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-details li::before {
+      content: "✦";
+      position: absolute;
+      left: -12px;
+      top: 0px;
+      font-size: 6pt;
+      color: #B89B72;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3mm;
+      padding-top: 2.5mm;
+      border-top: 1px dashed #DDD4C6;
+    }
+
+    .footer-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11pt;
+      font-style: italic;
+      color: #4A5D52;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-sub {
+      font-size: 7.5pt;
+      color: #8C7355;
+      margin-top: 1px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Decorative Frame -->
+  <div class="page-frame"></div>
+  <div class="corner-decor corner-tl"></div>
+  <div class="corner-decor corner-tr"></div>
+  <div class="corner-decor corner-bl"></div>
+  <div class="corner-decor corner-br"></div>
+
+  <div class="content-wrapper">
+    <!-- Header -->
+    <header>
+      <svg class="header-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 40C32.8366 40 40 32.8366 40 24C40 15.1634 32.8366 8 24 8C15.1634 8 8 15.1634 8 24C8 32.8366 15.1634 40 24 40Z" stroke="#B89B72" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M40 56C48.8366 56 56 48.8366 56 40C56 31.1634 48.8366 24 40 24C31.1634 24 24 31.1634 24 40C24 48.8366 31.1634 56 40 56Z" stroke="#3D5A49" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="20" cy="18" r="2" fill="#D6C5AD"/>
+        <circle cx="44" cy="34" r="2" fill="#3D5A49"/>
+      </svg>
+      <div class="header-subtitle">Tagesablauf</div>
+      <h1>Standesamtliche Hochzeit</h1>
+      <div class="location-tag">
+        <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 0C2.24 0 0 2.24 0 5C0 8.75 5 12 5 12C5 12 10 8.75 10 5C10 2.24 7.76 0 5 0ZM5 6.75C4.035 6.75 3.25 5.965 3.25 5C3.25 4.035 4.035 3.25 5 3.25C5.965 3.25 6.75 4.035 6.75 5C6.75 5.965 5.965 6.75 5 6.75Z" fill="#4A5D52"/>
+        </svg>
+        Palmengarten
+      </div>
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line"></div>
+      </div>
+    </header>
+
+    <!-- Timeline Content -->
+    <div class="timeline">
+      <div class="timeline-vertical-line"></div>
+
+      <!-- Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title-wrap">
+              <span class="item-number">01.</span>
+              <span class="item-title">Ankunft der Gäste</span>
+            </div>
+            <span class="time-badge">09:30 UHR</span>
+          </div>
+          <ul class="item-details">
+            <li>Gäste treffen ca. 30 Minuten vor Beginn beim Standesamt ein</li>
+            <li>Möglichkeit zum kurzen Empfang und zur Begrüßung</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title-wrap">
+              <span class="item-number">02.</span>
+              <span class="item-title">Eintreffen des Brautpaars</span>
+            </div>
+            <span class="time-badge">09:45 UHR</span>
+          </div>
+          <ul class="item-details">
+            <li>Brautpaar kommt getrennt an</li>
+            <li>Begrüßung durch die Standesbeamtin / den Standesbeamten und Klärung der Unterlagen</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title-wrap">
+              <span class="item-number">03.</span>
+              <span class="item-title">Beginn der Trauung</span>
+            </div>
+            <span class="time-badge">10:00 UHR</span>
+          </div>
+          <ul class="item-details">
+            <li>Offizielle Begrüßung durch die Standesbeamtin / den Standesbeamten &amp; Erklärung des Ablaufs</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title-wrap">
+              <span class="item-number">04.</span>
+              <span class="item-title">Eheschließung</span>
+            </div>
+            <span class="time-badge">10:20 UHR</span>
+          </div>
+          <ul class="item-details">
+            <li>Vorlesen der Eheschließungserklärung &amp; Bejahung durch das Brautpaar</li>
+            <li>Unterzeichnung des Eheregisters (Möglichkeit für Trauzeugen, ebenfalls zu unterschreiben)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title-wrap">
+              <span class="item-number">05.</span>
+              <span class="item-title">Austausch der Ringe</span>
+            </div>
+            <span class="time-badge">FEIERLICHER MOMENT</span>
+          </div>
+          <ul class="item-details">
+            <li>Übergabe der Ringe (Aca) und Anstecken der Ringe</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title-wrap">
+              <span class="item-number">06.</span>
+              <span class="item-title">Gratulation &amp; Auszug</span>
+            </div>
+            <span class="time-badge">10:30 UHR</span>
+          </div>
+          <ul class="item-details">
+            <li>Glückwünsche durch Familie und Freunde</li>
+            <li>Gemeinsamer Auszug aus dem Trauzimmer</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title-wrap">
+              <span class="item-number">07.</span>
+              <span class="item-title">Sektempfang &amp; Fotos</span>
+            </div>
+            <span class="time-badge">10:30 – 12:00 UHR</span>
+          </div>
+          <ul class="item-details">
+            <li>Sektempfang vor dem Standesamt</li>
+            <li>Gruppenfotos und Einzelfotos mit dem Brautpaar</li>
+            <li>Brautpaarshooting</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="item-card">
+          <div class="item-header">
+            <div class="item-title-wrap">
+              <span class="item-number">08.</span>
+              <span class="item-title">Weiterführende Feierlichkeiten</span>
+            </div>
+            <span class="time-badge">IM ANSCHLUSS</span>
+          </div>
+          <ul class="item-details">
+            <li>Fahrt zur geplanten Hochzeitsfeier</li>
+            <li>Gemeinsames Essen &amp; gemütlicher Abend</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-quote">„Liebe ist das einzige, was wächst, indem wir es verschwenden.“</div>
+      <div class="footer-sub">Wir freuen uns auf einen unvergesslichen Tag mit euch!</div>
+    </footer>
+  </div>
+
+</body>
+</html>
