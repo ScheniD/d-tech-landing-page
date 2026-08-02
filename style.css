@@ -3,7 +3,7 @@
     --bg-card: rgba(255, 255, 255, 0.03);
     --bg-card-hover: rgba(255, 255, 255, 0.06);
     --text-main: #FFFFFF;
-    --text-muted: #8899A6;
+    --text-muted: #A4B4C4; /* Improved contrast for accessibility */
     --primary: #0070F3; /* Electric Blue */
     --border-color: rgba(255, 255, 255, 0.05);
     

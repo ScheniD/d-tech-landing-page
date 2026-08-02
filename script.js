@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Translations
     const translations = {
         de: {
-            title: "D-Tech Solutions | Webdesign & IT-Dienstleistungen in Frankfurt",
-            desc: "Ihr Partner für professionelles Webdesign und IT-Dienstleistungen in Frankfurt am Main. Wir erstellen moderne, schnelle und SEO-optimierte Websites für lokale Unternehmen.",
+            title: "Webdesign & IT-Service in Frankfurt | D-Tech Solutions",
+            desc: "Wir erstellen moderne, schnelle Websites & bieten zuverlässige WP-Wartung für lokale Betriebe in Frankfurt. Steigern Sie jetzt Ihre digitale Sichtbarkeit!",
             navServices: "Dienstleistungen",
             navPortfolio: "Referenzen",
             navWhyUs: "Warum Wir",
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
             langBtn: "EN"
         },
         en: {
-            title: "D-Tech Solutions | Web Design & IT Services in Frankfurt",
-            desc: "Your partner for professional web design and IT services in Frankfurt am Main. We build modern, fast, and SEO-optimized websites for local businesses.",
+            title: "Web Design & IT Services in Frankfurt | D-Tech Solutions",
+            desc: "We build modern, fast websites & offer reliable WP maintenance for local businesses in Frankfurt. Boost your digital visibility today!",
             navServices: "Services",
             navPortfolio: "Portfolio",
             navWhyUs: "Why Us",
