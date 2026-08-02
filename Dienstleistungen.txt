@@ -29,18 +29,19 @@ LEISTUNGSUMFANG:
 PITCH-ARGUMENT:
 "Nichts ist teurer als eine langsame Webseite. Wir sorgen dafür, dass Ihre Kunden nicht abspringen, bevor die Seite geladen hat."
 
-3. LAUFENDE VERWALTUNG & MANAGEMENT
+3. LAUFENDE VERWALTUNG & MANAGEMENT (inkl. WordPress Wartung)
 ------------------------------------
 "Konzentrieren Sie sich auf Ihr Geschäft – wir kümmern uns um die Technik."
 
 LEISTUNGSUMFANG:
-- Regelmäßige Backups: Schutz vor Datenverlust.
+- WordPress Wartung: Regelmäßige Core-, Theme- und Plugin-Updates für höchste Sicherheit und Performance.
+- Regelmäßige Backups: Täglicher Schutz vor Datenverlust.
 - Sicherheits-Updates: Schutz vor Hackerangriffen und Malware.
 - Inhalts-Updates: Sie schicken uns ein Bild oder Text, wir pflegen es ein.
 - Monitoring: 24/7 Überwachung der Erreichbarkeit.
 
 PITCH-ARGUMENT:
-"Technik ändert sich täglich. Mit unserem Management-Service bleibt Ihre Seite immer auf dem neuesten Stand, sicher und funktionsfähig, ohne dass Sie einen Finger rühren müssen."
+"Technik ändert sich täglich. Mit unserem Management- und WordPress-Wartungs-Service bleibt Ihre Seite immer auf dem neuesten Stand, sicher und funktionsfähig, ohne dass Sie einen Finger rühren müssen."
 
 4. ZUSATZLEISTUNGEN (Upsells)
 -----------------------------
