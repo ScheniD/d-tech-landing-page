@@ -62,9 +62,6 @@ h1, h2, h3, h4 {
     background: #4fd1c5;
 }
 
-.btn-primary:active {
-    transform: scale(0.97);
-}
 
 .btn-primary-outline {
     background: transparent;
@@ -82,9 +79,6 @@ h1, h2, h3, h4 {
     color: #202023;
 }
 
-.btn-primary-outline:active {
-    transform: scale(0.97);
-}
 
 .btn-secondary {
     background: var(--bg-card);
@@ -101,9 +95,6 @@ h1, h2, h3, h4 {
     background: var(--bg-card-hover);
 }
 
-.btn-secondary:active {
-    transform: scale(0.97);
-}
 
 /* Navigation */
 .navbar {
@@ -653,9 +644,6 @@ footer {
     user-select: none;
 }
 
-.slider-btn:active {
-    transform: scale(0.95);
-}
 
 .slider-btn:focus {
     outline: none !important;
@@ -888,9 +876,6 @@ footer {
     color: var(--bg-dark);
 }
 
-.lang-btn:active {
-    transform: scale(0.95);
-}
 
 
 
