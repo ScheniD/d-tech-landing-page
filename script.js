@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.Cal && window.Cal.ns && window.Cal.ns["erstgesprach-potenzialanalyse"]) {
             try {
                 window.Cal.ns["erstgesprach-potenzialanalyse"]("inline", {
-                    elementOrSelector: "#my-cal-inline-erstgesprach-potenzialanalyse",
+                    elementOrSelector: "#my-cal-inline",
                     config: {
                         "layout": "month_view",
                         "useSlotsViewOnSmallScreen": "true",
