@@ -87,7 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
             bookingPlaceholderDesc: "Wählen Sie Ihren Wunschtermin direkt in unserem interaktiven Kalender aus. Klicken Sie unten, um freie Termine zu laden.",
             bookingPlaceholderBtn: "Jetzt Kalender laden",
             footerText: "&copy; 2026 D-Tech Solutions. Alle Rechte vorbehalten.",
-            langBtn: "EN"
+            langBtn: "EN",
+            titleKISeminare: "KI-Seminare & IT-Sensibilisierung",
+            subKISeminare: "Praxisnahe Aufklärung für Schulen, Lehrkräfte und lokale Unternehmen",
+            kiCard1Title: "Für Schüler & Jugendliche",
+            kiCard1Feat1: "Deepfakes erkennen",
+            kiCard1Feat2: "Sicherer Umgang mit Social Media",
+            kiCard1Feat3: "ChatGPT fair nutzen",
+            kiCard2Title: "Für Lehrkräfte & Kollegien",
+            kiCard2Feat1: "KI im Unterricht nutzen",
+            kiCard2Feat2: "Plagiate erkennen",
+            kiCard2Feat3: "Datenschutz",
+            kiCard3Title: "Für Unternehmen",
+            kiCard3Feat1: "KI-Tools zur Effizienzsteigerung",
+            kiCard3Feat2: "Cyber-Security Basics",
+            kiCard3Feat3: "Mitarbeiter-Sensibilisierung",
+            btnKISeminar: "Jetzt unverbindliches Seminar anfragen"
         },
         en: {
             title: "Web Design & IT Services in Frankfurt | D-Tech Solutions",
@@ -178,7 +193,22 @@ document.addEventListener('DOMContentLoaded', () => {
             footerText: "&copy; 2026 D-Tech Solutions. All rights reserved.",
             footerImpressum: "Legal Notice",
             footerPrivacy: "Privacy Policy",
-            langBtn: "DE"
+            langBtn: "DE",
+            titleKISeminare: "AI Seminars & IT Awareness",
+            subKISeminare: "Practical education for schools, teachers, and local businesses",
+            kiCard1Title: "For Students & Youth",
+            kiCard1Feat1: "Recognizing Deepfakes",
+            kiCard1Feat2: "Safe Social Media Use",
+            kiCard1Feat3: "Using ChatGPT Fairly",
+            kiCard2Title: "For Teachers & Staff",
+            kiCard2Feat1: "AI in the Classroom",
+            kiCard2Feat2: "Detecting Plagiarism",
+            kiCard2Feat3: "Data Privacy",
+            kiCard3Title: "For Businesses",
+            kiCard3Feat1: "AI Tools for Efficiency",
+            kiCard3Feat2: "Cyber Security Basics",
+            kiCard3Feat3: "Employee Awareness Training",
+            btnKISeminar: "Request a Seminar Now"
         }
     };
 
