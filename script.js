@@ -401,6 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.background = '#0070F3';
                     btn.style.color = '#fff';
                     form.reset();
+                    window.location.href = '/danke';
                 } else {
                     btn.textContent = currentLang === 'de' ? 'Fehler beim Senden' : 'Error sending';
                     btn.style.background = '#ff4444';
