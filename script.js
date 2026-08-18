@@ -102,7 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
             kiCard3Feat1: "KI-Tools zur Effizienzsteigerung",
             kiCard3Feat2: "Cyber-Security Basics",
             kiCard3Feat3: "Mitarbeiter-Sensibilisierung",
-            btnKISeminar: "Jetzt unverbindliches Seminar anfragen"
+            btnKISeminar: "Jetzt unverbindliches Seminar anfragen",
+            linkedinTitle: "Lass uns auf LinkedIn vernetzen",
+            linkedinSub: "Ich teile regelmäßig Insights zu Tech & Webentwicklung."
         },
         en: {
             title: "Web Design & IT Services in Frankfurt | D-Tech Solutions",
@@ -208,7 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
             kiCard3Feat1: "AI Tools for Efficiency",
             kiCard3Feat2: "Cyber Security Basics",
             kiCard3Feat3: "Employee Awareness Training",
-            btnKISeminar: "Request a Seminar Now"
+            btnKISeminar: "Request a Seminar Now",
+            linkedinTitle: "Let's connect on LinkedIn",
+            linkedinSub: "I regularly share insights on tech & web development."
         }
     };
 
