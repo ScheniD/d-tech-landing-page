@@ -373,49 +373,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Web3Forms AJAX Submission
+    // Web3Forms Native Submission (Fallback for API Bug)
     const form = document.getElementById('contact-form');
     if(form) {
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
             const btn = form.querySelector('button');
-            
-            const formData = new FormData(form);
-            
             btn.textContent = currentLang === 'de' ? 'Wird gesendet...' : 'Sending...';
-            
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: formData
-            })
-            .then(async (response) => {
-                let jsonRes = await response.json();
-                if (response.status == 200) {
-                    btn.textContent = currentLang === 'de' ? 'Nachricht Gesendet!' : 'Message Sent!';
-                    btn.style.background = '#0070F3';
-                    btn.style.color = '#fff';
-                    form.reset();
-                    window.location.href = '/danke';
-                } else {
-                    btn.textContent = currentLang === 'de' ? 'Fehler beim Senden' : 'Error sending';
-                    btn.style.background = '#ff4444';
-                    console.log(jsonRes);
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                btn.textContent = currentLang === 'de' ? 'Fehler beim Senden' : 'Error sending';
-                btn.style.background = '#ff4444';
-            })
-            .finally(() => {
-                setTimeout(() => {
-                    btn.textContent = translations[currentLang].formBtn;
-                    btn.style.background = '';
-                }, 4000);
-            });
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
         });
     }
 
