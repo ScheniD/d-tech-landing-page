@@ -381,18 +381,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = form.querySelector('button');
             
             const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
             
             btn.textContent = currentLang === 'de' ? 'Wird gesendet...' : 'Sending...';
             
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: json
+                body: formData
             })
             .then(async (response) => {
                 let jsonRes = await response.json();
