@@ -13,16 +13,22 @@
             padding: 140px 20px 60px;
             max-width: 800px;
             margin: 0 auto;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
         }
         .legal-content h1 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             color: var(--primary);
+            line-height: 1.2;
         }
         .legal-content h2 {
             font-size: 1.5rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
         .legal-content p, .legal-content li {
             margin-bottom: 1rem;
@@ -38,6 +44,17 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .legal-content {
+                padding: 100px 15px 40px;
+            }
+            .legal-content h1 {
+                font-size: 2rem;
+            }
+            .legal-content h2 {
+                font-size: 1.25rem;
+            }
         }
     </style>
     <!-- Cookie Banner & Google Consent Mode v2 -->
@@ -93,6 +110,15 @@
  
                 <h3>Google Fonts</h3>
                 <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts. Diese werden lokal eingebunden oder von Google-Servern geladen, wobei Ihre IP-Adresse an Google übertragen werden kann.</p>
+
+                <h3>Vercel Analytics & Speed Insights</h3>
+                <p>Diese Website nutzt Vercel Analytics und Speed Insights zur anonymisierten Auswertung von Website-Zugriffen und zur Performance-Messung. Anbieter ist die Vercel Inc. Dabei können Nutzungsdaten und IP-Adressen verarbeitet werden. Die Daten werden zur Verbesserung unseres Angebots genutzt.</p>
+
+                <h3>Google Ads und Conversion-Tracking</h3>
+                <p>Wir nutzen das Online-Werbeprogramm „Google Ads“ und in dessen Rahmen das Conversion-Tracking (Besuchsaktionsauswertung). Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Wenn Sie auf eine von Google geschaltete Anzeige klicken, wird ein Cookie für das Conversion-Tracking auf Ihrem Rechner abgelegt. Diese Cookies verlieren in der Regel nach 30 Tagen ihre Gültigkeit. Besuchen Sie bestimmte Seiten unserer Website, können wir und Google erkennen, dass Sie auf die Anzeige geklickt haben und zu dieser Seite weitergeleitet wurden.</p>
+
+                <h3>Cookies und Consent Management</h3>
+                <p>Unsere Website nutzt Cookies und vergleichbare Technologien. Zur Verwaltung Ihrer Präferenzen verwenden wir ein Consent-Management-Tool. Sie können Ihre Einwilligung jederzeit widerrufen oder anpassen.</p>
             </section>
  
             <hr class="legal-divider" style="margin: 40px 0; border: 0; border-top: 1px solid var(--border-color);">
@@ -115,6 +141,15 @@
 
                 <h3>Google Fonts</h3>
                 <p>This site uses so-called Google Fonts for the uniform display of fonts. These are integrated locally or loaded from Google servers, whereby your IP address can be transmitted to Google.</p>
+
+                <h3>Vercel Analytics & Speed Insights</h3>
+                <p>This website uses Vercel Analytics and Speed Insights for the anonymized evaluation of website visits and performance measurement. The provider is Vercel Inc. Usage data and IP addresses may be processed. The data is used to improve our services.</p>
+
+                <h3>Google Ads and Conversion Tracking</h3>
+                <p>We use the online advertising program "Google Ads" and, as part of this, conversion tracking. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. If you click on an ad served by Google, a conversion tracking cookie is placed on your computer. These cookies usually expire after 30 days. If you visit certain pages of our website, we and Google can recognize that you clicked on the ad and were redirected to this page.</p>
+
+                <h3>Cookies and Consent Management</h3>
+                <p>Our website uses cookies and similar technologies. We use a consent management tool to manage your preferences. You can revoke or adjust your consent at any time.</p>
             </section>
         </main>
 
