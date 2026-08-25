@@ -373,14 +373,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Web3Forms Native Submission (Fallback for API Bug)
+    // Web3Forms AJAX Submission (Fixing client-side error)
     const form = document.getElementById('contact-form');
-    if(form) {
-        form.addEventListener('submit', function(e) {
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
             const btn = form.querySelector('button');
+            const originalText = btn.textContent;
             btn.textContent = currentLang === 'de' ? 'Wird gesendet...' : 'Sending...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
+
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    window.location.href = 'danke.html';
+                } else {
+                    alert(currentLang === 'de' ? 'Fehler beim Senden der Nachricht.' : 'Error sending message.');
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert(currentLang === 'de' ? 'Netzwerkfehler. Bitte später erneut versuchen.' : 'Network error. Please try again later.');
+                btn.textContent = originalText;
+                btn.disabled = false;
+                btn.style.opacity = '1';
+            }
         });
     }
 
