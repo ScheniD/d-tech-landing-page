@@ -1,5 +1,12 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/karte",
+      "destination": "/?ref=karte",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
