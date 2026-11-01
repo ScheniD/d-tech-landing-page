@@ -1,2 +1,15 @@
 .DS_Store
 .vscode/
+.env
+.env.*
+node_modules/
+Mockups/
+Zusammenfassungen_KI/
+DESIGN.md
+Dienstleistungen.txt
+CNAME
+*.py
+timeline.html
+style.css
+script.js
+fonts/

@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
             expires = '; expires=' + date.toUTCString();
         }
-        document.cookie = name + '=' + (value || '') + expires + '; path=/; SameSite=Lax';
+        const secureFlag = window.location.protocol === 'https:' ? '; Secure' : '';
+        document.cookie = name + '=' + (value || '') + expires + '; path=/; SameSite=Lax' + secureFlag;
     }
 
     function updateConsent(granted) {
@@ -44,15 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function showBanner() {
         const banner = document.createElement('div');
         banner.id = 'cookie-consent-banner';
+        banner.setAttribute('role', 'region');
+        banner.setAttribute('aria-label', 'Cookie-Einstellungen');
         banner.innerHTML = `
             <div class="cookie-content">
                 <p>
+                    <strong style="color:#f4f4f6; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; display:block; margin-bottom:4px;">// DATENSCHUTZ &amp; TELEMETRIE</strong>
                     Wir verwenden Cookies und Google Services, um die Funktionalität dieser Website zu verbessern und unseren Traffic zu analysieren. 
                     Dabei werden Daten (wie z.B. IP-Adressen) erhoben. <a href="datenschutz.html">Weitere Informationen</a>.
                 </p>
                 <div class="cookie-buttons">
-                    <button id="cookie-reject" class="btn-secondary">Ablehnen</button>
-                    <button id="cookie-accept" class="btn-primary">Akzeptieren</button>
+                    <button id="cookie-reject" type="button" class="btn-secondary">ABLEHNEN</button>
+                    <button id="cookie-accept" type="button" class="btn-primary">AKZEPTIEREN</button>
                 </div>
             </div>
         `;
@@ -65,19 +69,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 left: 50%;
                 transform: translateX(-50%);
                 width: calc(100% - 40px);
-                max-width: 800px;
-                background-color: var(--bg-surface, #1e1e1e);
-                border: 1px solid var(--border-color, #333);
-                border-radius: 12px;
-                padding: 20px;
+                max-width: 860px;
+                background-color: #0d0e11;
+                border: 1px solid rgba(224, 122, 95, 0.45);
+                border-top: 2px solid #e07a5f;
+                border-radius: 0px;
+                padding: 20px 24px;
                 z-index: 9999;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
-                font-family: 'Inter', sans-serif;
-                color: var(--text-main, #fff);
-                animation: slideUp 0.5s ease-out;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                color: #e3e2e6;
+                animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             }
             .cookie-content {
                 display: flex;
@@ -93,46 +98,49 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             #cookie-consent-banner p {
                 margin: 0;
-                font-size: 0.95rem;
+                font-size: 0.875rem;
                 line-height: 1.5;
-                color: var(--text-muted, #a0a0a0);
+                color: #dbc1ba;
             }
             #cookie-consent-banner a {
-                color: var(--primary, #0070F3);
+                color: #ffb4a1;
                 text-decoration: underline;
             }
             .cookie-buttons {
                 display: flex;
-                gap: 12px;
+                gap: 10px;
                 flex-shrink: 0;
             }
             #cookie-reject, #cookie-accept {
-                padding: 10px 16px;
-                font-size: 0.95rem;
-                font-weight: 500;
-                border-radius: 6px;
+                padding: 10px 18px;
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                border-radius: 0px;
                 cursor: pointer;
-                transition: background-color 0.2s, color 0.2s;
-                border: none;
+                transition: all 0.1s linear;
             }
             #cookie-reject {
-                background-color: transparent;
-                color: var(--text-muted, #a0a0a0);
-                border: 1px solid var(--border-color, #333);
+                background-color: #121316;
+                color: #a38b86;
+                border: 1px solid rgba(244, 244, 246, 0.14);
             }
             #cookie-reject:hover {
-                background-color: var(--border-color, #333);
-                color: var(--text-main, #fff);
+                border-color: #ffb68e;
+                color: #f4f4f6;
             }
             #cookie-accept {
-                background-color: var(--primary, #0070F3);
-                color: #fff;
+                background-color: #e07a5f;
+                color: #0d0e11;
+                border: 1px solid #e07a5f;
             }
             #cookie-accept:hover {
-                background-color: #005bb5;
+                background-color: #ffb4a1;
+                border-color: #ffb4a1;
             }
             @keyframes slideUp {
-                from { opacity: 0; transform: translate(-50%, 20px); }
+                from { opacity: 0; transform: translate(-50%, 16px); }
                 to { opacity: 1; transform: translate(-50%, 0); }
             }
         `;

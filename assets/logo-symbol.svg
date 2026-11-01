@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="28 28 200 200" width="200" height="200" role="img">
+  <title>D-Tech Symbol</title>
+  <g id="symbol" transform="translate(4 0)">
+    <path fill="#f4f4f6" fill-rule="evenodd" d="M40 32 H112 A96 96 0 0 1 112 224 H40 Z M76 68 H112 A60 60 0 0 1 112 188 H76 Z"/>
+    <path fill="#e07a5f" d="M94.3 80.6 L141.7 128.0 L94.3 175.4 L94.3 145.8 L112.1 128.0 L94.3 110.2 Z"/>
+  </g>
+</svg>
