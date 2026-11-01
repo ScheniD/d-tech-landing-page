@@ -442,7 +442,6 @@
                     [ SERVICE-RADAR // DOMINIK DIREKT ]
                   </span>
                 </div>
-                <span class="font-label-mono-sm text-label-mono-sm text-primary transition-all duration-300" id="telemetry-status-badge">STATUS: EINSATZBEREIT</span>
               </div>
 
               <!-- Interactive Mode Selector Buttons -->
@@ -1686,8 +1685,6 @@
     // 6. Interactive Hero Telemetry Console Switcher
     const telemetryData = {
       rettung: {
-        status: 'STATUS: AKUT EINSATZBEREIT',
-        badgeClass: 'text-primary',
         stat1: '< 24h',
         lbl1: 'Reaktionszeit',
         stat2: 'SOFORT-CHECK',
@@ -1697,8 +1694,6 @@
         activeId: 'telem-item-1'
       },
       neubau: {
-        status: 'STATUS: KAPAZITÄT FREI',
-        badgeClass: 'text-secondary',
         stat1: '2–4 WOCHEN',
         lbl1: 'Projektdauer',
         stat2: 'FESTPREIS',
@@ -1708,8 +1703,6 @@
         activeId: 'telem-item-2'
       },
       wartung: {
-        status: 'STATUS: SERVICE AKTIV',
-        badgeClass: 'text-emerald-400',
         stat1: 'MONATLICH',
         lbl1: 'Flexibel kündbar',
         stat2: '24/7 SCHUTZ',
@@ -1723,13 +1716,6 @@
     function switchTelemetryMode(mode) {
       const data = telemetryData[mode];
       if (!data) return;
-
-      // Status badge
-      const badge = document.getElementById('telemetry-status-badge');
-      if (badge) {
-        badge.textContent = data.status;
-        badge.className = `font-label-mono-sm text-label-mono-sm transition-all duration-300 ${data.badgeClass}`;
-      }
 
       // Switch bar styles
       const buttons = document.querySelectorAll('#telemetry-switch-bar button');
