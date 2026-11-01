@@ -108,10 +108,16 @@
 
   <style>
     @layer base {
-      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
       body { overscroll-behavior: none; }
+      section[id] { scroll-margin-top: 5rem; }
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
+      h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
+      /* Prevent iOS Safari auto-zoom on form fields (< 16px) */
+      @media (max-width: 767px) {
+        input, textarea, select { font-size: 16px !important; }
+      }
     }
     ::-webkit-scrollbar { display: none; }
 
@@ -362,12 +368,20 @@
     </div>
 
     <!-- Mobile / Tablet Navigation Drawer -->
-    <nav id="mobile-nav-drawer" aria-label="Mobilnavigation" class="hidden lg:hidden bg-surface-container-lowest border-b border-outline-variant/40 px-margin py-space-md flex-col gap-space-sm">
-      <a class="py-2 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#manifest">ÜBERBLICK</a>
-      <a class="py-2 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#leistungen">LEISTUNGEN</a>
-      <a class="py-2 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#referenzen">REFERENZEN</a>
-      <a class="py-2 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#philosophie">PHILOSOPHIE</a>
-      <a class="py-2 font-label-mono-md text-label-mono-md uppercase tracking-wider text-primary font-semibold transition-colors" href="#kontakt">KONTAKT &amp; ERSTGESPRÄCH</a>
+    <nav id="mobile-nav-drawer" aria-label="Mobilnavigation" class="hidden lg:hidden bg-surface-container-lowest/98 backdrop-blur-2xl border-b border-primary-container/40 px-margin py-space-md flex-col gap-1 shadow-2xl">
+      <a class="py-3 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#manifest"><span>ÜBERBLICK</span><span class="text-outline">→</span></a>
+      <a class="py-3 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#leistungen"><span>LEISTUNGEN</span><span class="text-outline">→</span></a>
+      <a class="py-3 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#referenzen"><span>REFERENZEN</span><span class="text-outline">→</span></a>
+      <a class="py-3 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#philosophie"><span>PHILOSOPHIE</span><span class="text-outline">→</span></a>
+      <a class="py-3 font-label-mono-md text-label-mono-md uppercase tracking-wider text-primary font-semibold transition-colors flex items-center justify-between" href="#kontakt"><span>KONTAKT &amp; ERSTGESPRÄCH</span><span>→</span></a>
+      <div class="grid grid-cols-2 gap-2 pt-2 border-t border-outline-variant/30">
+        <a href="tel:+4915164020000" class="py-2.5 px-3 bg-surface-container border border-outline-variant/40 text-on-surface font-label-mono-sm text-label-mono-sm uppercase tracking-wider flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-primary text-[16px]">phone_in_talk</span>ANRUFEN
+        </a>
+        <a href="https://wa.me/4915164020000" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 bg-surface-container border border-outline-variant/40 text-on-surface font-label-mono-sm text-label-mono-sm uppercase tracking-wider flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-primary text-[16px]">chat</span>WHATSAPP
+        </a>
+      </div>
     </nav>
   </header>
 
@@ -409,15 +423,15 @@
               </p>
 
               <!-- CTAs -->
-              <div class="flex flex-wrap items-center gap-space-md pt-space-sm">
-                <a class="group relative inline-flex items-center gap-space-sm px-space-lg py-3.5 bg-surface-container-high border border-primary-container text-on-surface hover:bg-primary-container hover:text-on-primary-container font-label-mono-md text-label-mono-md uppercase tracking-wider transition-all duration-150 shadow-lg shadow-black/40 hover:shadow-primary-container/20 hover:-translate-y-0.5" href="#kontakt">
-                  <span class="w-2 h-2 bg-primary group-hover:bg-on-primary-container transition-colors"></span>
-                  JETZT ERSTGESPRÄCH ANFRAGEN
-                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-space-md pt-space-sm">
+                <a class="group relative inline-flex items-center justify-center gap-space-sm px-space-lg py-3.5 bg-surface-container-high border border-primary-container text-on-surface hover:bg-primary-container hover:text-on-primary-container font-label-mono-md text-label-mono-md uppercase tracking-wider transition-all duration-150 shadow-lg shadow-black/40 hover:shadow-primary-container/20 hover:-translate-y-0.5 text-center" href="#kontakt">
+                  <span class="w-2 h-2 bg-primary group-hover:bg-on-primary-container transition-colors shrink-0"></span>
+                  <span>JETZT ERSTGESPRÄCH ANFRAGEN</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform shrink-0">arrow_forward</span>
                 </a>
-                <a class="inline-flex items-center gap-space-sm px-space-lg py-3.5 bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-outline font-label-mono-md text-label-mono-md uppercase tracking-wider transition-all duration-150 hover:-translate-y-0.5" href="#leistungen">
-                  <span class="material-symbols-outlined text-[16px] text-primary">build</span>
-                  ANGEBOTE &amp; LEISTUNGEN
+                <a class="inline-flex items-center justify-center gap-space-sm px-space-lg py-3.5 bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-outline font-label-mono-md text-label-mono-md uppercase tracking-wider transition-all duration-150 hover:-translate-y-0.5 text-center" href="#leistungen">
+                  <span class="material-symbols-outlined text-[16px] text-primary shrink-0">build</span>
+                  <span>ANGEBOTE &amp; LEISTUNGEN</span>
                 </a>
               </div>
 
@@ -446,24 +460,24 @@
 
               <!-- Interactive Mode Selector Buttons -->
               <div class="grid grid-cols-3 gap-1 p-1 bg-surface-container-low border border-outline-variant/30 font-label-mono-sm text-[11px] text-center" id="telemetry-switch-bar">
-                <button class="py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-primary bg-surface-container border border-primary-container/40" data-mode="rettung" type="button">
+                <button class="py-2 sm:py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-primary bg-surface-container border border-primary-container/40" data-mode="rettung" type="button">
                   RETTUNG
                 </button>
-                <button class="py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-on-surface-variant hover:text-on-surface" data-mode="neubau" type="button">
+                <button class="py-2 sm:py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-on-surface-variant hover:text-on-surface" data-mode="neubau" type="button">
                   NEUBAU
                 </button>
-                <button class="py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-on-surface-variant hover:text-on-surface" data-mode="wartung" type="button">
+                <button class="py-2 sm:py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-on-surface-variant hover:text-on-surface" data-mode="wartung" type="button">
                   SERVICE
                 </button>
               </div>
 
               <!-- Telemetry Item 1 -->
               <div class="p-space-md bg-surface-container border border-primary-container/50 flex flex-col gap-1.5 group hover:border-primary-container/40 transition-all cursor-pointer telemetry-card" id="telem-item-1" onclick="switchTelemetryMode('rettung')">
-                <div class="flex items-center justify-between">
+                <div class="flex items-start justify-between gap-2">
                   <span class="font-label-mono-md text-label-mono-md text-primary font-semibold tracking-wide">
                     WORDPRESS-NOTFALLHILFE
                   </span>
-                  <span class="font-label-mono-sm text-label-mono-sm text-outline px-1.5 py-0.5 bg-surface-container font-mono">AKUT</span>
+                  <span class="font-label-mono-sm text-label-mono-sm text-outline px-1.5 py-0.5 bg-surface-container font-mono shrink-0">AKUT</span>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant">
                   Zerschossene Updates, kaputte Plugins oder Sicherheitslecks – schnell diagnostiziert und sauber repariert.
@@ -472,11 +486,11 @@
 
               <!-- Telemetry Item 2 -->
               <div class="p-space-md bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1.5 group hover:border-primary-container/40 transition-all cursor-pointer telemetry-card opacity-85" id="telem-item-2" onclick="switchTelemetryMode('neubau')">
-                <div class="flex items-center justify-between">
+                <div class="flex items-start justify-between gap-2">
                   <span class="font-label-mono-md text-label-mono-md text-secondary font-semibold tracking-wide">
                     SCHNELLE MAßGEFERTIGTE WEBSITES
                   </span>
-                  <span class="font-label-mono-sm text-label-mono-sm text-outline px-1.5 py-0.5 bg-surface-container font-mono">MODERN</span>
+                  <span class="font-label-mono-sm text-label-mono-sm text-outline px-1.5 py-0.5 bg-surface-container font-mono shrink-0">MODERN</span>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant">
                   Präzise, mobiloptimierte Websites für Praxen, Kanzleien und Dienstleister. Extrem schnelle Ladezeiten, top Konversion und klare Nutzerführung.
@@ -485,11 +499,11 @@
 
               <!-- Telemetry Item 3 -->
               <div class="p-space-md bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1.5 group hover:border-primary-container/40 transition-all cursor-pointer telemetry-card opacity-85" id="telem-item-3" onclick="switchTelemetryMode('wartung')">
-                <div class="flex items-center justify-between">
+                <div class="flex items-start justify-between gap-2">
                   <span class="font-label-mono-md text-label-mono-md text-on-surface font-semibold tracking-wide">
                     VERLÄSSLICHE BETREUUNGSVERTRÄGE
                   </span>
-                  <span class="font-label-mono-sm text-label-mono-sm text-primary px-1.5 py-0.5 bg-surface-container font-mono">SORGLOS</span>
+                  <span class="font-label-mono-sm text-label-mono-sm text-primary px-1.5 py-0.5 bg-surface-container font-mono shrink-0">SORGLOS</span>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant">
                   Monatliche Updates, Backups, Monitoring und direkter Support auf Zuruf per Telefon oder WhatsApp – ohne Agentur-Warteschleifen.
@@ -497,18 +511,18 @@
               </div>
 
               <!-- Bottom Telemetry Chips mit Live-Zählern -->
-              <div class="grid grid-cols-3 gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm text-center">
-                <div class="bg-surface-container px-2 py-3 border border-outline-variant/20 flex flex-col items-center justify-center gap-1 min-h-[64px]">
-                  <span class="text-primary font-bold text-xs sm:text-sm whitespace-nowrap transition-colors" id="stat-val-1">&lt; 24h</span>
-                  <span class="text-[9px] text-outline uppercase tracking-tight leading-tight whitespace-nowrap" id="stat-lbl-1">Reaktionszeit</span>
+              <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm text-center">
+                <div class="bg-surface-container px-1.5 sm:px-2 py-2.5 sm:py-3 border border-outline-variant/20 flex flex-col items-center justify-center gap-1 min-h-[60px] sm:min-h-[64px]">
+                  <span class="text-primary font-bold text-[11px] sm:text-sm whitespace-nowrap transition-colors" id="stat-val-1">&lt; 24h</span>
+                  <span class="text-[8.5px] sm:text-[9px] text-outline uppercase tracking-tight leading-tight whitespace-nowrap" id="stat-lbl-1">Reaktionszeit</span>
                 </div>
-                <div class="bg-surface-container px-2 py-3 border border-outline-variant/20 flex flex-col items-center justify-center gap-1 min-h-[64px]">
-                  <span class="text-primary font-bold text-xs sm:text-sm whitespace-nowrap transition-colors" id="stat-val-2">FESTPREIS</span>
-                  <span class="text-[9px] text-outline uppercase tracking-tight leading-tight whitespace-nowrap" id="stat-lbl-2">Oder Vertrag</span>
+                <div class="bg-surface-container px-1.5 sm:px-2 py-2.5 sm:py-3 border border-outline-variant/20 flex flex-col items-center justify-center gap-1 min-h-[60px] sm:min-h-[64px]">
+                  <span class="text-primary font-bold text-[11px] sm:text-sm whitespace-nowrap transition-colors" id="stat-val-2">FESTPREIS</span>
+                  <span class="text-[8.5px] sm:text-[9px] text-outline uppercase tracking-tight leading-tight whitespace-nowrap" id="stat-lbl-2">Oder Vertrag</span>
                 </div>
-                <div class="bg-surface-container px-2 py-3 border border-outline-variant/20 flex flex-col items-center justify-center gap-1 min-h-[64px]">
-                  <span class="text-primary font-bold text-xs sm:text-sm whitespace-nowrap transition-colors" id="stat-val-3">1:1 DIREKT</span>
-                  <span class="text-[9px] text-outline uppercase tracking-tight leading-tight whitespace-nowrap" id="stat-lbl-3">Ohne Tickets</span>
+                <div class="bg-surface-container px-1.5 sm:px-2 py-2.5 sm:py-3 border border-outline-variant/20 flex flex-col items-center justify-center gap-1 min-h-[60px] sm:min-h-[64px]">
+                  <span class="text-primary font-bold text-[11px] sm:text-sm whitespace-nowrap transition-colors" id="stat-val-3">1:1 DIREKT</span>
+                  <span class="text-[8.5px] sm:text-[9px] text-outline uppercase tracking-tight leading-tight whitespace-nowrap" id="stat-lbl-3">Ohne Tickets</span>
                 </div>
               </div>
             </div>
@@ -673,12 +687,12 @@
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
             <!-- Säule 01: WordPress-Rettung & Problembehebung -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/40 hover:border-primary-container transition-all flex flex-col justify-between group interactive-card tilt-card">
-              <div class="p-space-lg flex flex-col gap-space-md">
+              <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md">
                 <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/20">
                   <span class="font-label-mono-md text-label-mono-md text-primary tracking-widest font-semibold">01 // RETTUNG &amp; REPARATUR</span>
                   <span class="material-symbols-outlined text-outline text-[24px] group-hover:text-primary transition-colors">healing</span>
                 </div>
-                <h3 class="font-headline-md text-headline-md text-on-surface">
+                <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
                   WordPress-Rettung &amp; Problembehebung
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -696,7 +710,7 @@
                   </div>
                 </div>
               </div>
-              <div class="p-space-md bg-surface-container-lowest border-t border-outline-variant/20 flex items-center justify-between">
+              <div class="p-space-md bg-surface-container-lowest border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-2">
                 <span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Reaktionszeit: Akut &amp; kurzfristig</span>
                 <a class="font-label-mono-sm text-label-mono-sm text-primary group-hover:underline" href="#kontakt">NOTFALL ANFRAGEN →</a>
               </div>
@@ -704,12 +718,12 @@
 
             <!-- Säule 02: Maßgeschneiderte neue Websites -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/40 hover:border-primary-container transition-all flex flex-col justify-between group interactive-card tilt-card" style="transition-delay: 80ms;">
-              <div class="p-space-lg flex flex-col gap-space-md">
+              <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md">
                 <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/20">
                   <span class="font-label-mono-md text-label-mono-md text-primary tracking-widest font-semibold">02 // NEUBAU &amp; RELAUNCH</span>
                   <span class="material-symbols-outlined text-outline text-[24px] group-hover:text-primary transition-colors">devices</span>
                 </div>
-                <h3 class="font-headline-md text-headline-md text-on-surface">
+                <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
                   Maßgeschneiderte neue Websites
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -727,7 +741,7 @@
                   </div>
                 </div>
               </div>
-              <div class="p-space-md bg-surface-container-lowest border-t border-outline-variant/20 flex items-center justify-between">
+              <div class="p-space-md bg-surface-container-lowest border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-2">
                 <span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Laufzeit: 2–4 Wochen schlüsselfertig</span>
                 <a class="font-label-mono-sm text-label-mono-sm text-primary group-hover:underline" href="#kontakt">WEBSITE PLANEN →</a>
               </div>
@@ -735,12 +749,12 @@
 
             <!-- Säule 03: Laufende Betreuung & Serviceverträge -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/40 hover:border-primary-container transition-all flex flex-col justify-between group interactive-card tilt-card" style="transition-delay: 160ms;">
-              <div class="p-space-lg flex flex-col gap-space-md">
+              <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md">
                 <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/20">
                   <span class="font-label-mono-md text-label-mono-md text-primary tracking-widest font-semibold">03 // SERVICE &amp; WARTUNG</span>
                   <span class="material-symbols-outlined text-outline text-[24px] group-hover:text-primary transition-colors">verified_user</span>
                 </div>
-                <h3 class="font-headline-md text-headline-md text-on-surface">
+                <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
                   Laufende Betreuung &amp; Serviceverträge
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -758,7 +772,7 @@
                   </div>
                 </div>
               </div>
-              <div class="p-space-md bg-surface-container-lowest border-t border-outline-variant/20 flex items-center justify-between">
+              <div class="p-space-md bg-surface-container-lowest border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-2">
                 <span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Modell: Monatlich kündbar &amp; flexibel</span>
                 <a class="font-label-mono-sm text-label-mono-sm text-primary group-hover:underline" href="#kontakt">SERVICE ANFRAGEN →</a>
               </div>
@@ -800,125 +814,125 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-desktop">
             <!-- Case 1: Haarprofi Frankfurt -->
             <div class="reveal-item bg-surface-container border border-outline-variant/40 hover:border-primary-container/70 transition-colors flex flex-col interactive-card tilt-card">
-              <div class="p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
-                <h3 class="font-headline-md text-headline-md text-on-surface">
+              <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
+                <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
                   Haarprofi Frankfurt
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Lösung für den Salon-Alltag: Beseitigung alter Buchungsprobleme und Bereitstellung eines intuitiven, mobiloptimierten Terminsystems. Entlastet das Team spürbar vom Telefonklingeln.
                 </p>
                 <!-- Metrics Matrix mit animierten Zählern -->
-                <div class="grid grid-cols-3 gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
+                <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-primary font-bold text-headline-sm" data-counter-prefix="-" data-counter-suffix="%" data-counter-target="-45">-45%</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Telefon-Entlastung</span>
+                    <span class="text-primary font-bold text-base sm:text-headline-sm" data-counter-prefix="-" data-counter-suffix="%" data-counter-target="-45">-45%</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Telefon-Entlastung</span>
                   </div>
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-on-surface font-bold text-headline-sm" data-counter-decimals="1" data-counter-suffix="s" data-counter-target="0.6">0.6s</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Ladezeit Mobil</span>
+                    <span class="text-on-surface font-bold text-base sm:text-headline-sm" data-counter-decimals="1" data-counter-suffix="s" data-counter-target="0.6">0.6s</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Ladezeit Mobil</span>
                   </div>
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-secondary font-bold text-headline-sm" data-counter-prefix="&lt; " data-counter-target="3">&lt; 3</span>
-                    <span class="text-[11px] leading-tight mt-1 text-outline">Klicks zum Termin</span>
+                    <span class="text-secondary font-bold text-base sm:text-headline-sm" data-counter-prefix="&lt; " data-counter-target="3">&lt; 3</span>
+                    <span class="text-[10px] sm:text-[11px] leading-tight mt-1 text-outline">Klicks zum Termin</span>
                   </div>
                 </div>
               </div>
-              <div class="p-space-md bg-surface-container-lowest flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+              <div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-outline font-label-mono-sm text-label-mono-sm">
                 <span>LEISTUNG: BUCHUNGSSYSTEM &amp; WEBDESIGN</span>
-                <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> BETREUUNG AKTIV ✓</span>
+                <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0"></span> BETREUUNG AKTIV ✓</span>
               </div>
             </div>
 
             <!-- Case 2: idee. Creativmarkt -->
             <div class="reveal-item bg-surface-container border border-outline-variant/40 hover:border-primary-container/70 transition-colors flex flex-col interactive-card tilt-card" style="transition-delay: 80ms;">
-              <div class="p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
-                <h3 class="font-headline-md text-headline-md text-on-surface">
+              <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
+                <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
                   idee. Creativmarkt
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Reibungslose Kurs- &amp; Workshop-Verwaltung für deutschlandweite Standorte. Beseitigung technischer Hürden und Sicherstellung stabiler Buchungsabläufe auch bei hohem Ansturm.
                 </p>
                 <!-- Metrics Matrix mit animierten Zählern -->
-                <div class="grid grid-cols-3 gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
+                <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-secondary font-bold text-headline-sm" data-counter-suffix="%" data-counter-target="100">100%</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Stabile Buchungen</span>
+                    <span class="text-secondary font-bold text-base sm:text-headline-sm" data-counter-suffix="%" data-counter-target="100">100%</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Stabile Buchungen</span>
                   </div>
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-on-surface font-bold text-headline-sm" data-counter-suffix=" Min" data-counter-target="0">0 Min</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Ausfallzeiten</span>
+                    <span class="text-on-surface font-bold text-base sm:text-headline-sm" data-counter-suffix=" Min" data-counter-target="0">0 Min</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Ausfallzeiten</span>
                   </div>
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-primary font-bold text-headline-sm" data-counter-decimals="2" data-counter-suffix="%" data-counter-target="99.98">99.98%</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Zuverlässigkeit</span>
+                    <span class="text-primary font-bold text-base sm:text-headline-sm" data-counter-decimals="2" data-counter-suffix="%" data-counter-target="99.98">99.98%</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Zuverlässigkeit</span>
                   </div>
                 </div>
               </div>
-              <div class="p-space-md bg-surface-container-lowest flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+              <div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-outline font-label-mono-sm text-label-mono-sm">
                 <span>LEISTUNG: SYSTEMINTEGRATION &amp; WORKSHOPS</span>
-                <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> LIVE IM EINSATZ ✓</span>
+                <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span> LIVE IM EINSATZ ✓</span>
               </div>
             </div>
 
             <!-- Case 3: Muthmedia Filmproduktion -->
             <div class="reveal-item bg-surface-container border border-outline-variant/40 hover:border-primary-container/70 transition-colors flex flex-col interactive-card tilt-card">
-              <div class="p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
-                <h3 class="font-headline-md text-headline-md text-on-surface">
+              <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
+                <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
                   Muthmedia Filmproduktion
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Hochwertige, ruckelfreie Video-Präsentation für anspruchsvolle Firmenkunden. Schnelle Ladezeiten trotz datenintensiver Showreels – ohne dass die Website ins Stocken gerät.
                 </p>
                 <!-- Metrics Matrix -->
-                <div class="grid grid-cols-3 gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
+                <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-primary font-bold text-headline-sm">Top</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Flüssige Wiedergabe</span>
+                    <span class="text-primary font-bold text-base sm:text-headline-sm">Top</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Flüssige Wiedergabe</span>
                   </div>
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-on-surface font-bold text-headline-sm">1080p</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Buffer-Free Player</span>
+                    <span class="text-on-surface font-bold text-base sm:text-headline-sm">1080p</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Buffer-Free Player</span>
                   </div>
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-secondary font-bold text-headline-sm" data-counter-prefix="+" data-counter-suffix="%" data-counter-target="84">+84%</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Längere Verweildauer</span>
+                    <span class="text-secondary font-bold text-base sm:text-headline-sm" data-counter-prefix="+" data-counter-suffix="%" data-counter-target="84">+84%</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Längere Verweildauer</span>
                   </div>
                 </div>
               </div>
-              <div class="p-space-md bg-surface-container-lowest flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+              <div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-outline font-label-mono-sm text-label-mono-sm">
                 <span>LEISTUNG: PERFORMANCE-TUNING &amp; WEBAUFTRITT</span>
-                <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> ERFOLGREICH REALISIERT ✓</span>
+                <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0"></span> ERFOLGREICH REALISIERT ✓</span>
               </div>
             </div>
 
             <!-- Case 4: Top Magazin Frankfurt -->
             <div class="reveal-item bg-surface-container border border-outline-variant/40 hover:border-primary-container/70 transition-colors flex flex-col interactive-card tilt-card" style="transition-delay: 80ms;">
-              <div class="p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
-                <h3 class="font-headline-md text-headline-md text-on-surface">
+              <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
+                <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
                   Top Magazin Frankfurt
                 </h3>
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Digitale Aufbereitung hochwertiger redaktioneller Inhalte. Saubere Bilddarstellung, optimierte Ladezeiten und ein modernes Lesegerüst für das renommierte Regionalmagazin.
                 </p>
                 <!-- Metrics Matrix -->
-                <div class="grid grid-cols-3 gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
+                <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-secondary font-bold text-headline-sm" data-counter-prefix="+" data-counter-suffix="%" data-counter-target="62">+62%</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Mehr Lesezeit</span>
+                    <span class="text-secondary font-bold text-base sm:text-headline-sm" data-counter-prefix="+" data-counter-suffix="%" data-counter-target="62">+62%</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Mehr Lesezeit</span>
                   </div>
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-on-surface font-bold text-headline-sm">Schnell</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Optimierte Bilder</span>
+                    <span class="text-on-surface font-bold text-base sm:text-headline-sm">Schnell</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Optimierte Bilder</span>
                   </div>
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
-                    <span class="text-primary font-bold text-headline-sm" data-counter-suffix="/100" data-counter-target="100">100/100</span>
-                    <span class="text-outline text-[11px] leading-tight mt-1">Saubere Struktur</span>
+                    <span class="text-primary font-bold text-base sm:text-headline-sm" data-counter-suffix="/100" data-counter-target="100">100/100</span>
+                    <span class="text-outline text-[10px] sm:text-[11px] leading-tight mt-1">Saubere Struktur</span>
                   </div>
                 </div>
               </div>
-              <div class="p-space-md bg-surface-container-lowest flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+              <div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-outline font-label-mono-sm text-label-mono-sm">
                 <span>LEISTUNG: WEBMAGAZIN &amp; LAUFENDE WARTUNG</span>
-                <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> IN BETREUUNG ✓</span>
+                <span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span> IN BETREUUNG ✓</span>
               </div>
             </div>
           </div>
@@ -1046,35 +1060,35 @@
           </div>
 
           <!-- Founder Feature Monolith -->
-          <div class="reveal-item bg-surface-container-low border border-primary-container/40 p-space-lg md:p-space-xl relative overflow-hidden interactive-card">
+          <div class="reveal-item bg-surface-container-low border border-primary-container/40 p-space-md sm:p-space-lg md:p-space-xl relative overflow-hidden interactive-card">
             <!-- Top border highlight mit Pulsieren -->
             <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary-container to-secondary line-glow-pulse"></div>
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
               <!-- Founder Identification Block -->
               <div class="lg:col-span-4 flex flex-col gap-space-md border-b lg:border-b-0 lg:border-r border-outline-variant/30 pb-space-lg lg:pb-0 lg:pr-space-lg">
                 <div class="flex items-center gap-space-md">
-                  <div class="w-16 h-16 bg-surface-container-lowest border-2 border-primary-container flex items-center justify-center shrink-0 shadow-[0_0_16px_rgba(224,122,95,0.2)]">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 bg-surface-container-lowest border-2 border-primary-container flex items-center justify-center shrink-0 shadow-[0_0_16px_rgba(224,122,95,0.2)]">
                     <span class="font-headline-sm text-headline-sm font-bold text-primary">DS</span>
                   </div>
-                  <div class="flex flex-col">
-                    <span class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold">Dominik Schenitzki</span>
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-headline-sm text-lg sm:text-headline-sm text-on-surface uppercase font-bold">Dominik Schenitzki</span>
                     <span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest">Entwickler &amp; Ihr fester Ansprechpartner</span>
                     <span class="font-label-mono-sm text-label-mono-sm text-outline">D-TECH SOLUTIONS · FRANKFURT</span>
                   </div>
                 </div>
                 <!-- Founder Authentication Stamp (Component Token) -->
-                <div class="p-space-sm bg-surface-container-lowest border border-outline-variant/40 flex flex-col gap-1 font-label-mono-sm text-label-mono-sm">
-                  <div class="flex items-center justify-between text-outline">
+                <div class="p-space-sm bg-surface-container-lowest border border-outline-variant/40 flex flex-col gap-1.5 font-label-mono-sm text-label-mono-sm">
+                  <div class="flex items-center justify-between gap-2 text-outline">
                     <span>VERFÜGBARKEIT:</span>
-                    <span class="text-on-surface flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>SCHNELLE REAKTIONSZEIT</span>
+                    <span class="text-on-surface flex items-center gap-1.5 text-right"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0"></span>SCHNELLE REAKTIONSZEIT</span>
                   </div>
-                  <div class="flex items-center justify-between text-outline">
+                  <div class="flex items-center justify-between gap-2 text-outline">
                     <span>ARBEITSWEISE:</span>
-                    <span class="text-primary">PRAGMATISCH &amp; SAUBER</span>
+                    <span class="text-primary text-right">PRAGMATISCH &amp; SAUBER</span>
                   </div>
-                  <div class="flex items-center justify-between text-outline">
+                  <div class="flex items-center justify-between gap-2 text-outline">
                     <span>KONTAKT:</span>
-                    <span class="text-emerald-400">DIREKTE CHEF-BETREUUNG</span>
+                    <span class="text-emerald-400 text-right">DIREKTE CHEF-BETREUUNG</span>
                   </div>
                 </div>
               </div>
@@ -1139,31 +1153,31 @@
                   // DIREKTER KONTAKT ZU DOMINIK
                 </span>
                 <div class="flex flex-col gap-space-md font-body-md text-body-md">
-                  <a class="flex items-center gap-space-md group hover:text-primary transition-colors" href="tel:+4915164020000">
+                  <a class="flex items-center gap-space-md group hover:text-primary transition-colors min-w-0" href="tel:+4915164020000">
                     <div class="w-10 h-10 bg-surface-container border border-outline-variant/40 flex items-center justify-center shrink-0 group-hover:border-primary-container transition-colors">
                       <span class="material-symbols-outlined text-primary text-[20px]">phone_in_talk</span>
                     </div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col min-w-0">
                       <span class="font-label-mono-sm text-label-mono-sm text-outline">DIREKT-TELEFON</span>
-                      <span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary">+49 151 64020000</span>
+                      <span class="font-headline-sm text-lg sm:text-headline-sm text-on-surface group-hover:text-primary truncate">+49 151 64020000</span>
                     </div>
                   </a>
-                  <a class="flex items-center gap-space-md group hover:text-secondary transition-colors" href="https://wa.me/4915164020000" rel="noopener noreferrer" target="_blank">
+                  <a class="flex items-center gap-space-md group hover:text-secondary transition-colors min-w-0" href="https://wa.me/4915164020000" rel="noopener noreferrer" target="_blank">
                     <div class="w-10 h-10 bg-surface-container border border-outline-variant/40 flex items-center justify-center shrink-0 group-hover:border-secondary transition-colors">
                       <span class="material-symbols-outlined text-secondary text-[20px]">chat</span>
                     </div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col min-w-0">
                       <span class="font-label-mono-sm text-label-mono-sm text-outline">WHATSAPP / SIGNAL</span>
-                      <span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary">+49 151 64020000</span>
+                      <span class="font-headline-sm text-lg sm:text-headline-sm text-on-surface group-hover:text-secondary truncate">+49 151 64020000</span>
                     </div>
                   </a>
-                  <a class="flex items-center gap-space-md group hover:text-primary transition-colors" href="mailto:dominiksi@dtechsolutions.eu">
+                  <a class="flex items-center gap-space-md group hover:text-primary transition-colors min-w-0" href="mailto:dominiksi@dtechsolutions.eu">
                     <div class="w-10 h-10 bg-surface-container border border-outline-variant/40 flex items-center justify-center shrink-0 group-hover:border-primary-container transition-colors">
                       <span class="material-symbols-outlined text-primary text-[20px]">mail</span>
                     </div>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col min-w-0">
                       <span class="font-label-mono-sm text-label-mono-sm text-outline">E-MAIL ANFRAGE</span>
-                      <span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary">dominiksi@dtechsolutions.eu</span>
+                      <span class="font-headline-sm text-base sm:text-headline-sm text-on-surface group-hover:text-primary break-all">dominiksi@dtechsolutions.eu</span>
                     </div>
                   </a>
                 </div>
@@ -1179,7 +1193,7 @@
             </div>
 
             <!-- Right: Interactive Project Briefing Form -->
-            <div class="reveal-item lg:col-span-7 bg-surface-container-lowest border border-primary-container/40 p-space-lg md:p-space-xl relative shadow-2xl interactive-card">
+            <div class="reveal-item lg:col-span-7 bg-surface-container-lowest border border-primary-container/40 p-space-md sm:p-space-lg md:p-space-xl relative shadow-2xl interactive-card">
               <!-- Specular Milled Highlight Top Edge mit Pulsieren -->
               <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-container via-primary to-secondary line-glow-pulse"></div>
 
@@ -1187,7 +1201,7 @@
                 <!-- Honeypot Spam Protection -->
                 <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off"/>
 
-                <div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/30">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-space-xs border-b border-outline-variant/30">
                   <span class="font-label-mono-md text-label-mono-md text-on-surface font-bold uppercase tracking-wider">
                     [ UNVERBINDLICHE ANFRAGE // ERSTGESPRÄCH ]
                   </span>
@@ -1261,16 +1275,16 @@
                 <!-- Form Row 6: Zeithorizont Selector -->
                 <div class="flex flex-col gap-1.5">
                   <label class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">Dringlichkeit / Zeithorizont</label>
-                  <div class="grid grid-cols-3 gap-2 font-label-mono-sm text-label-mono-sm text-center">
-                    <label class="p-2 border hover:border-primary-container cursor-pointer border-primary-container bg-surface-container">
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-label-mono-sm text-label-mono-sm text-center">
+                    <label class="p-2.5 sm:p-2 border hover:border-primary-container cursor-pointer border-primary-container bg-surface-container flex items-center justify-center">
                       <input checked="" class="sr-only" name="timing" type="radio" value="fast"/>
                       <span class="text-on-surface block">Dringend / Notfall</span>
                     </label>
-                    <label class="p-2 bg-surface-container-low border border-outline-variant/30 hover:border-primary-container cursor-pointer">
+                    <label class="p-2.5 sm:p-2 bg-surface-container-low border border-outline-variant/30 hover:border-primary-container cursor-pointer flex items-center justify-center">
                       <input class="sr-only" name="timing" type="radio" value="q2"/>
                       <span class="text-on-surface block">Nächste Wochen</span>
                     </label>
-                    <label class="p-2 bg-surface-container-low border border-outline-variant/30 hover:border-primary-container cursor-pointer">
+                    <label class="p-2.5 sm:p-2 bg-surface-container-low border border-outline-variant/30 hover:border-primary-container cursor-pointer flex items-center justify-center">
                       <input class="sr-only" name="timing" type="radio" value="flex"/>
                       <span class="text-on-surface block">Flexibel</span>
                     </label>
@@ -1396,11 +1410,11 @@
           </div>
         </div>
 
-        <div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-label-mono-sm text-label-mono-sm">
-          <div class="flex items-center gap-space-md">
+        <div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-label-mono-sm text-label-mono-sm text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start gap-space-md">
             <span class="text-outline">© 2026 D-TECH SOLUTIONS · DOMINIK SCHENITZKI.</span>
           </div>
-          <div class="flex items-center gap-space-lg">
+          <div class="flex flex-wrap items-center justify-center gap-space-md sm:gap-space-lg">
             <a class="text-on-surface-variant hover:text-primary transition-colors" data-path="impressum" href="impressum.html">IMPRESSUM</a>
             <span class="text-outline-variant">/</span>
             <a class="text-on-surface-variant hover:text-primary transition-colors" data-path="datenschutz" href="datenschutz.html">DATENSCHUTZ</a>
@@ -1590,9 +1604,10 @@
       }
     });
 
-    // 2. Mouse-Follow Spotlight / Radial Glow on Cards & Sections
+    // 2. Mouse-Follow Spotlight / Radial Glow on Cards & Sections (Desktop Pointer Only)
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReduced) {
+    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!prefersReduced && isFinePointer) {
       const spotlights = document.querySelectorAll('.interactive-spotlight, .interactive-card');
       spotlights.forEach(el => {
         el.addEventListener('pointermove', (e) => {
@@ -1721,9 +1736,9 @@
       const buttons = document.querySelectorAll('#telemetry-switch-bar button');
       buttons.forEach(btn => {
         if (btn.getAttribute('data-mode') === mode) {
-          btn.className = 'py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-primary bg-surface-container border border-primary-container/40';
+          btn.className = 'py-2 sm:py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-primary bg-surface-container border border-primary-container/40';
         } else {
-          btn.className = 'py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-on-surface-variant hover:text-on-surface';
+          btn.className = 'py-2 sm:py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-on-surface-variant hover:text-on-surface';
         }
       });
 
