@@ -5,6 +5,11 @@
       "source": "/karte",
       "destination": "/?ref=karte",
       "permanent": false
+    },
+    {
+      "source": "/termin",
+      "destination": "https://cal.com/dominik-schenitzki-431sms/erstgesprach-potenzialanalyse?utm_source=visitenkarte&utm_medium=qr",
+      "statusCode": 307
     }
   ],
   "headers": [
