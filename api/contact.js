@@ -1,11 +1,3 @@
-/**
- * Vercel Serverless Function: /api/contact
- * Empfängt Projekt- & Notfall-Anfragen vom D-Tech Solutions Onepager
- * und stellt sie per Resend API (falls RESEND_API_KEY gesetzt),
- * optionalem Webhook (CONTACT_WEBHOOK_URL) oder Web3Forms-Fallback
- * direkt an dominiksi@dtechsolutions.eu zu.
- */
-
 const ALLOWED_ORIGINS = new Set([
   'https://dtechsolutions.eu',
   'https://www.dtechsolutions.eu',
@@ -49,7 +41,6 @@ export default async function handler(req, res) {
   try {
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
 
-    // Honeypot-Spam-Schutz
     if (body.botcheck) {
       return res.status(200).json({ ok: true, status: 'filtered' });
     }
@@ -98,7 +89,6 @@ export default async function handler(req, res) {
 
     let delivered = false;
 
-    // 1. Primärer Versand über Resend API (falls RESEND_API_KEY in Vercel gesetzt ist)
     if (process.env.RESEND_API_KEY) {
       const resendFrom = process.env.RESEND_FROM_EMAIL || 'D-Tech Website <anfrage@dtechsolutions.eu>';
       const resendRes = await fetch('https://api.resend.com/emails', {
@@ -121,7 +111,6 @@ export default async function handler(req, res) {
       }
     }
 
-    // 2. Optionaler Webhook (z.B. Slack, Discord, Make, n8n)
     if (process.env.CONTACT_WEBHOOK_URL) {
       const hookRes = await fetch(process.env.CONTACT_WEBHOOK_URL, {
         method: 'POST',
@@ -144,7 +133,6 @@ export default async function handler(req, res) {
       }
     }
 
-    // 3. Fallback über Web3Forms, falls noch kein RESEND_API_KEY konfiguriert wurde
     if (!delivered) {
       const accessKey = process.env.WEB3FORMS_ACCESS_KEY || 'b105e343-1e04-4899-a9da-21a05eed1a1a';
       const w3Res = await fetch('https://api.web3forms.com/submit', {

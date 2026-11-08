@@ -9,14 +9,12 @@
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://dtechsolutions.eu/"/>
 
-  <!-- Favicons & Web App Manifest (Kupfer & Granit Edition) -->
   <link rel="icon" href="favicon.ico" sizes="48x48"/>
   <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
   <link rel="manifest" href="site.webmanifest"/>
   <meta name="theme-color" content="#121316"/>
 
-  <!-- Open Graph / Social Sharing -->
   <meta property="og:site_name" content="D-Tech Solutions"/>
   <meta property="og:locale" content="de_DE"/>
   <meta property="og:type" content="website"/>
@@ -28,13 +26,11 @@
   <meta property="og:image:height" content="630"/>
   <meta property="og:image:alt" content="D-Tech Solutions – Digital done right."/>
 
-  <!-- Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="D-Tech Solutions Frankfurt | WordPress-Rettung, Neubau &amp; Serviceverträge"/>
   <meta name="twitter:description" content="Schluss mit WordPress-Frust &amp; Agentur-Chaos: Schnelle Notfallhilfe, maßgeschneiderte Websites &amp; laufende Betreuung in Frankfurt am Main."/>
   <meta name="twitter:image" content="https://dtechsolutions.eu/assets/og-image.png"/>
 
-  <!-- Structured Data: Local Business / Professional Service -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,13 +68,11 @@
   }
   </script>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
 
-  <!-- Vercel Analytics & Speed Insights -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
@@ -86,7 +80,6 @@
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 
-  <!-- Cookie Banner & Google Consent Mode v2 -->
   <script src="cookie-banner.js" defer></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -114,13 +107,11 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
       h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
-      /* Prevent iOS Safari auto-zoom on form fields (< 16px) */
       @media (max-width: 767px) {
         input, textarea, select { font-size: 16px !important; }
       }
     }
 
-    /* Interactive Spotlight & Subtle Circuit Glow Effects */
     .interactive-spotlight {
       position: relative;
       overflow: hidden;
@@ -139,7 +130,6 @@
       opacity: 1;
     }
 
-    /* Metallic Edge Trace Highlight on Hover */
     .interactive-card {
       position: relative;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
@@ -163,7 +153,6 @@
       opacity: 1;
     }
 
-    /* Subtle Breathing Line Glow */
     @keyframes wireGlow {
       0%, 100% { opacity: 0.35; }
       50% { opacity: 0.85; filter: drop-shadow(0 0 4px rgba(224, 122, 95, 0.4)); }
@@ -172,7 +161,6 @@
       animation: wireGlow 5s ease-in-out infinite;
     }
 
-    /* Scroll Entrance Reveals */
     .reveal-item {
       opacity: 0;
       transform: translateY(22px);
@@ -183,7 +171,6 @@
       transform: translateY(0);
     }
 
-    /* Post-Interaction Form Validation (:user-invalid / :user-valid + Fallback) */
     .briefing-input:user-invalid,
     .briefing-input.user-invalid-fallback {
       border-color: #ffb4ab !important;
@@ -205,7 +192,6 @@
       display: block;
     }
 
-    /* Accessibility: Prefers Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
       *, ::before, ::after {
         animation-duration: 0.01ms !important;
@@ -331,9 +317,6 @@
 </head>
 <body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
 
-  <!-- ========================================== -->
-  <!-- HEADER & NAVIGATION                        -->
-  <!-- ========================================== -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30">
     <div class="h-20 w-full px-margin md:px-margin-desktop flex items-center justify-between gap-space-md">
       <div class="flex items-center gap-space-md min-w-0">
@@ -366,7 +349,6 @@
       </div>
     </div>
 
-    <!-- Mobile / Tablet Navigation Drawer -->
     <nav id="mobile-nav-drawer" aria-label="Mobilnavigation" class="hidden lg:hidden bg-surface-container-lowest/98 backdrop-blur-2xl border-b border-primary-container/40 px-margin py-space-md flex-col gap-1 shadow-2xl">
       <a class="py-3 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#manifest"><span>ÜBERBLICK</span><span class="text-outline">→</span></a>
       <a class="py-3 border-b border-outline-variant/20 font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between" href="#leistungen"><span>LEISTUNGEN</span><span class="text-outline">→</span></a>
@@ -391,16 +373,11 @@
   <main class="w-full pt-20 bg-background">
     <div class="flex flex-col w-full">
 
-      <!-- ========================================== -->
-      <!-- 01 // HERO & TELEMETRIE-MANIFEST           -->
-      <!-- ========================================== -->
       <section class="w-full px-margin md:px-margin-desktop py-space-xl md:py-space-xxl bg-surface border-b border-outline-variant/30 relative overflow-hidden interactive-spotlight" id="manifest">
-        <!-- Atmospheric subtle background glow -->
         <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute top-1/2 right-0 w-80 h-80 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto flex flex-col gap-space-xl relative z-10">
-          <!-- Eyebrow Badges Grid -->
           <div class="reveal-item flex flex-wrap items-center gap-space-sm font-label-mono-sm text-label-mono-sm">
             <span class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest border border-outline-variant/40 text-on-surface uppercase tracking-widest shadow-sm">
               <span class="w-1.5 h-1.5 bg-primary"></span>
@@ -411,9 +388,7 @@
             </span>
           </div>
 
-          <!-- Main Asymmetric Grid: Headline + Telemetry Panel -->
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
-            <!-- Left: Hero Headline & Description -->
             <div class="reveal-item lg:col-span-7 flex flex-col gap-space-lg">
               <div class="inline-flex items-center gap-space-xs px-space-sm py-1 w-fit bg-primary-container/10 border border-primary-container/40 text-primary font-label-mono-sm text-label-mono-sm uppercase tracking-widest">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>DIGITAL DONE RIGHT. // PRÄZISION &amp; VERLÄSSLICHKEIT
@@ -425,7 +400,6 @@
                 Ich baue moderne, schnelle Websites für Praxen und Unternehmen – löse akute WordPress- &amp; Plugin-Probleme und halte Ihre Systeme mit verlässlichen Serviceverträgen dauerhaft am Laufen.
               </p>
 
-              <!-- CTAs -->
               <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-space-md pt-space-sm">
                 <a class="group relative inline-flex items-center justify-center gap-space-sm px-space-lg py-3.5 bg-surface-container-high border border-primary-container text-on-surface hover:bg-primary-container hover:text-on-primary-container focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary font-label-mono-md text-label-mono-md uppercase tracking-wider transition-all duration-150 shadow-lg shadow-black/40 hover:shadow-primary-container/20 hover:-translate-y-0.5 text-center" data-cal-cta="hero" href="https://cal.com/dominik-schenitzki-431sms/erstgesprach-potenzialanalyse?utm_source=website&amp;utm_medium=hero" target="_blank" rel="noopener noreferrer">
                   <span class="w-2 h-2 bg-primary group-hover:bg-on-primary-container transition-colors shrink-0"></span>
@@ -438,7 +412,6 @@
                 </a>
               </div>
 
-              <!-- Quick Anchor Ticker -->
               <div class="pt-space-md border-t border-outline-variant/30 flex flex-wrap items-center gap-x-space-lg gap-y-2 font-label-mono-sm text-label-mono-sm text-outline">
                 <span class="flex items-center gap-1.5"><span class="text-primary font-bold">✓</span> SCHNELLE NOTFALL-HILFE</span>
                 <span class="flex items-center gap-1.5"><span class="text-primary font-bold">✓</span> TRANSPARENTE FESTPREISE &amp; BETREUUNG</span>
@@ -446,12 +419,9 @@
               </div>
             </div>
 
-            <!-- Right: Telemetrie & Werkstoff-Manifest Board mit interaktivem Modus & Micro-Tilt -->
             <div class="reveal-item lg:col-span-5 bg-surface-container-lowest border border-outline-variant/50 shadow-2xl p-space-md md:p-space-lg relative flex flex-col gap-space-md interactive-card tilt-card" id="hero-telemetry-console">
-              <!-- Top edge highlight simulating milled copper -->
               <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-container via-primary to-transparent line-glow-pulse"></div>
 
-              <!-- Header -->
               <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/30">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -461,7 +431,6 @@
                 </div>
               </div>
 
-              <!-- Interactive Mode Selector Buttons -->
               <div class="grid grid-cols-3 gap-1 p-1 bg-surface-container-low border border-outline-variant/30 font-label-mono-sm text-[11px] text-center" id="telemetry-switch-bar">
                 <button class="py-2 sm:py-1.5 px-2 transition-all duration-200 uppercase font-semibold text-primary bg-surface-container border border-primary-container/40" data-mode="rettung" type="button">
                   RETTUNG
@@ -474,7 +443,6 @@
                 </button>
               </div>
 
-              <!-- Telemetry Item 1 -->
               <div class="p-space-md bg-surface-container border border-primary-container/50 flex flex-col gap-1.5 group hover:border-primary-container/40 transition-all cursor-pointer telemetry-card" id="telem-item-1" onclick="switchTelemetryMode('rettung')">
                 <div class="flex items-start justify-between gap-2">
                   <span class="font-label-mono-md text-label-mono-md text-primary font-semibold tracking-wide">
@@ -487,7 +455,6 @@
                 </p>
               </div>
 
-              <!-- Telemetry Item 2 -->
               <div class="p-space-md bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1.5 group hover:border-primary-container/40 transition-all cursor-pointer telemetry-card opacity-85" id="telem-item-2" onclick="switchTelemetryMode('neubau')">
                 <div class="flex items-start justify-between gap-2">
                   <span class="font-label-mono-md text-label-mono-md text-secondary font-semibold tracking-wide">
@@ -500,7 +467,6 @@
                 </p>
               </div>
 
-              <!-- Telemetry Item 3 -->
               <div class="p-space-md bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1.5 group hover:border-primary-container/40 transition-all cursor-pointer telemetry-card opacity-85" id="telem-item-3" onclick="switchTelemetryMode('wartung')">
                 <div class="flex items-start justify-between gap-2">
                   <span class="font-label-mono-md text-label-mono-md text-on-surface font-semibold tracking-wide">
@@ -513,7 +479,6 @@
                 </p>
               </div>
 
-              <!-- Bottom Telemetry Chips mit Live-Zählern -->
               <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm text-center">
                 <div class="bg-surface-container px-1.5 sm:px-2 py-2.5 sm:py-3 border border-outline-variant/20 flex flex-col items-center justify-center gap-1 min-h-[60px] sm:min-h-[64px]">
                   <span class="text-primary font-bold text-[11px] sm:text-sm whitespace-nowrap transition-colors" id="stat-val-1">&lt; 24h</span>
@@ -533,12 +498,8 @@
         </div>
       </section>
 
-      <!-- ========================================== -->
-      <!-- 02 // ARCHITEKTUR-MANIFEST / MATRIX        -->
-      <!-- ========================================== -->
       <section class="w-full px-margin md:px-margin-desktop py-space-xl md:py-space-xxl bg-surface-container-low border-b border-outline-variant/30 interactive-spotlight" id="architektur-manifest">
         <div class="max-w-7xl mx-auto flex flex-col gap-space-xl relative z-10">
-          <!-- Section Header -->
           <div class="reveal-item flex flex-col gap-space-xs max-w-3xl">
             <span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest">
               // DER REALITÄTS-CHECK // VERGLEICH
@@ -551,9 +512,7 @@
             </p>
           </div>
 
-          <!-- 2-Column Comparison Matrix -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-            <!-- Column A: Die typischen WordPress- & Agentur-Fallen -->
             <div class="reveal-item bg-surface-container-lowest border border-error/40 p-space-lg flex flex-col gap-space-md relative interactive-card tilt-card">
               <div class="absolute top-0 left-0 right-0 h-1 bg-error"></div>
               <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/30">
@@ -601,7 +560,6 @@
               </ul>
             </div>
 
-            <!-- Column B: Dominiks Arbeitsweise -->
             <div class="reveal-item bg-surface-container border border-primary-container p-space-lg flex flex-col gap-space-md relative shadow-xl interactive-card tilt-card">
               <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-container line-glow-pulse"></div>
               <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/30">
@@ -650,7 +608,6 @@
             </div>
           </div>
 
-          <!-- Trust Assurance Box -->
           <div class="reveal-item p-space-md bg-surface-container-lowest border border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-md interactive-card">
             <div class="flex items-center gap-space-md">
               <div class="w-10 h-10 bg-primary-container/20 border border-primary-container/40 flex items-center justify-center shrink-0">
@@ -668,12 +625,8 @@
         </div>
       </section>
 
-      <!-- ========================================== -->
-      <!-- 03 // LEISTUNGEN (DIE 3 SÄULEN)            -->
-      <!-- ========================================== -->
       <section class="w-full px-margin md:px-margin-desktop py-space-xl md:py-space-xxl bg-surface border-b border-outline-variant/30 interactive-spotlight" id="leistungen">
         <div class="max-w-7xl mx-auto flex flex-col gap-space-xl relative z-10">
-          <!-- Section Header -->
           <div class="reveal-item flex flex-col gap-space-xs max-w-3xl">
             <span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest">
               // LEISTUNGSANGEBOT // DIE 3 SÄULEN MEINER ARBEIT
@@ -686,9 +639,7 @@
             </p>
           </div>
 
-          <!-- 3 Bento Architecture Cards mit Micro-Tilt & Metallic Reflektion -->
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
-            <!-- Säule 01: WordPress-Rettung & Problembehebung -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/40 hover:border-primary-container transition-all flex flex-col justify-between group interactive-card tilt-card">
               <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md">
                 <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/20">
@@ -719,7 +670,6 @@
               </div>
             </div>
 
-            <!-- Säule 02: Maßgeschneiderte neue Websites -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/40 hover:border-primary-container transition-all flex flex-col justify-between group interactive-card tilt-card" style="transition-delay: 80ms;">
               <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md">
                 <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/20">
@@ -750,7 +700,6 @@
               </div>
             </div>
 
-            <!-- Säule 03: Laufende Betreuung & Serviceverträge -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/40 hover:border-primary-container transition-all flex flex-col justify-between group interactive-card tilt-card" style="transition-delay: 160ms;">
               <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md">
                 <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/20">
@@ -782,7 +731,6 @@
             </div>
           </div>
 
-          <!-- Process Ticker Banner -->
           <div class="reveal-item bg-surface-container-lowest border border-outline-variant/30 p-space-md flex flex-wrap items-center justify-between gap-space-md interactive-card">
             <div class="flex items-center gap-space-sm">
               <span class="font-label-mono-md text-label-mono-md text-primary font-semibold">// ABLAUF:</span>
@@ -795,12 +743,8 @@
         </div>
       </section>
 
-      <!-- ========================================== -->
-      <!-- 04 // REFERENZEN (AUSGEWÄHLTE BAUWERKE)    -->
-      <!-- ========================================== -->
       <section class="w-full px-margin md:px-margin-desktop py-space-xl md:py-space-xxl bg-surface-container-low border-b border-outline-variant/30 interactive-spotlight" id="referenzen">
         <div class="max-w-7xl mx-auto flex flex-col gap-space-xl relative z-10">
-          <!-- Section Header -->
           <div class="reveal-item flex flex-col gap-space-xs max-w-3xl">
             <span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest">
               // REFERENZEN // ECHTE PRAXIS-ERGEBNISSE
@@ -813,9 +757,7 @@
             </p>
           </div>
 
-          <!-- 4 Detailed Case Cards Grid mit animierten Zählern -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-desktop">
-            <!-- Case 1: Haarprofi Frankfurt -->
             <div class="reveal-item bg-surface-container border border-outline-variant/40 hover:border-primary-container/70 transition-colors flex flex-col interactive-card tilt-card">
               <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
                 <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
@@ -824,7 +766,6 @@
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Lösung für den Salon-Alltag: Beseitigung alter Buchungsprobleme und Bereitstellung eines intuitiven, mobiloptimierten Terminsystems. Entlastet das Team spürbar vom Telefonklingeln.
                 </p>
-                <!-- Metrics Matrix mit animierten Zählern -->
                 <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
                     <span class="text-primary font-bold text-base sm:text-headline-sm" data-counter-prefix="-" data-counter-suffix="%" data-counter-target="-45">-45%</span>
@@ -846,7 +787,6 @@
               </div>
             </div>
 
-            <!-- Case 2: idee. Creativmarkt -->
             <div class="reveal-item bg-surface-container border border-outline-variant/40 hover:border-primary-container/70 transition-colors flex flex-col interactive-card tilt-card" style="transition-delay: 80ms;">
               <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
                 <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
@@ -855,7 +795,6 @@
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Reibungslose Kurs- &amp; Workshop-Verwaltung für deutschlandweite Standorte. Beseitigung technischer Hürden und Sicherstellung stabiler Buchungsabläufe auch bei hohem Ansturm.
                 </p>
-                <!-- Metrics Matrix mit animierten Zählern -->
                 <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
                     <span class="text-secondary font-bold text-base sm:text-headline-sm" data-counter-suffix="%" data-counter-target="100">100%</span>
@@ -877,7 +816,6 @@
               </div>
             </div>
 
-            <!-- Case 3: Muthmedia Filmproduktion -->
             <div class="reveal-item bg-surface-container border border-outline-variant/40 hover:border-primary-container/70 transition-colors flex flex-col interactive-card tilt-card">
               <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
                 <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
@@ -886,7 +824,6 @@
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Hochwertige, ruckelfreie Video-Präsentation für anspruchsvolle Firmenkunden. Schnelle Ladezeiten trotz datenintensiver Showreels – ohne dass die Website ins Stocken gerät.
                 </p>
-                <!-- Metrics Matrix -->
                 <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
                     <span class="text-primary font-bold text-base sm:text-headline-sm">Top</span>
@@ -908,7 +845,6 @@
               </div>
             </div>
 
-            <!-- Case 4: Top Magazin Frankfurt -->
             <div class="reveal-item bg-surface-container border border-outline-variant/40 hover:border-primary-container/70 transition-colors flex flex-col interactive-card tilt-card" style="transition-delay: 80ms;">
               <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md border-b border-outline-variant/20">
                 <h3 class="font-headline-md text-headline-sm sm:text-headline-md text-on-surface">
@@ -917,7 +853,6 @@
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Digitale Aufbereitung hochwertiger redaktioneller Inhalte. Saubere Bilddarstellung, optimierte Ladezeiten und ein modernes Lesegerüst für das renommierte Regionalmagazin.
                 </p>
-                <!-- Metrics Matrix -->
                 <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-space-xs font-label-mono-sm text-label-mono-sm">
                   <div class="bg-surface-container-lowest p-space-sm border border-outline-variant/20 flex flex-col">
                     <span class="text-secondary font-bold text-base sm:text-headline-sm" data-counter-prefix="+" data-counter-suffix="%" data-counter-target="62">+62%</span>
@@ -940,7 +875,6 @@
             </div>
           </div>
 
-          <!-- Guarantee Badges Row -->
           <div class="reveal-item grid grid-cols-2 md:grid-cols-4 gap-gutter pt-space-md">
             <div class="p-space-md bg-surface-container border border-outline-variant/30 flex flex-col items-center text-center gap-1.5 interactive-card hover:-translate-y-1">
               <span class="material-symbols-outlined text-primary text-[28px]">speed</span>
@@ -966,12 +900,8 @@
         </div>
       </section>
 
-      <!-- ========================================== -->
-      <!-- 05 // PHILOSOPHIE & DER GRÜNDER            -->
-      <!-- ========================================== -->
       <section class="w-full px-margin md:px-margin-desktop py-space-xl md:py-space-xxl bg-surface border-b border-outline-variant/30 interactive-spotlight" id="philosophie">
         <div class="max-w-7xl mx-auto flex flex-col gap-space-xl relative z-10">
-          <!-- Section Header -->
           <div class="reveal-item flex flex-col gap-space-xs max-w-3xl">
             <span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest">
               // KUNDENSTIMMEN &amp; PHILOSOPHIE // PERSÖNLICH &amp; VERBINDLICH
@@ -984,9 +914,7 @@
             </p>
           </div>
 
-          <!-- Testimonial Grid (4 echte Google-Bewertungen) mit Micro-Tilt -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-            <!-- Review 1 -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/30 p-space-md flex flex-col justify-between gap-space-md interactive-card tilt-card">
               <div class="flex flex-col gap-space-xs">
                 <div class="flex items-center text-primary text-[14px]">
@@ -1002,7 +930,6 @@
               </div>
             </div>
 
-            <!-- Review 2 -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/30 p-space-md flex flex-col justify-between gap-space-md interactive-card tilt-card" style="transition-delay: 60ms;">
               <div class="flex flex-col gap-space-xs">
                 <div class="flex items-center text-primary text-[14px]">
@@ -1018,7 +945,6 @@
               </div>
             </div>
 
-            <!-- Review 3 -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/30 p-space-md flex flex-col justify-between gap-space-md interactive-card tilt-card" style="transition-delay: 120ms;">
               <div class="flex flex-col gap-space-xs">
                 <div class="flex items-center text-primary text-[14px]">
@@ -1034,7 +960,6 @@
               </div>
             </div>
 
-            <!-- Review 4 -->
             <div class="reveal-item bg-surface-container-low border border-outline-variant/30 p-space-md flex flex-col justify-between gap-space-md interactive-card tilt-card" style="transition-delay: 180ms;">
               <div class="flex flex-col gap-space-xs">
                 <div class="flex items-center text-primary text-[14px]">
@@ -1051,7 +976,6 @@
             </div>
           </div>
 
-          <!-- Google Review Verification Strip -->
           <div class="reveal-item p-space-sm px-space-md bg-surface-container-lowest border border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-mono-sm text-label-mono-sm">
             <div class="flex items-center gap-space-sm">
               <span class="text-primary font-bold">5.0 / 5.0 ★★★★★</span>
@@ -1062,12 +986,9 @@
             </a>
           </div>
 
-          <!-- Founder Feature Monolith -->
           <div class="reveal-item bg-surface-container-low border border-primary-container/40 p-space-md sm:p-space-lg md:p-space-xl relative overflow-hidden interactive-card">
-            <!-- Top border highlight mit Pulsieren -->
             <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary-container to-secondary line-glow-pulse"></div>
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-              <!-- Founder Identification Block -->
               <div class="lg:col-span-4 flex flex-col gap-space-md border-b lg:border-b-0 lg:border-r border-outline-variant/30 pb-space-lg lg:pb-0 lg:pr-space-lg">
                 <div class="flex items-center gap-space-md">
                   <div class="w-14 h-14 sm:w-16 sm:h-16 bg-surface-container-lowest border-2 border-primary-container flex items-center justify-center shrink-0 shadow-[0_0_16px_rgba(224,122,95,0.2)]">
@@ -1079,7 +1000,6 @@
                     <span class="font-label-mono-sm text-label-mono-sm text-outline">D-TECH SOLUTIONS · FRANKFURT</span>
                   </div>
                 </div>
-                <!-- Founder Authentication Stamp (Component Token) -->
                 <div class="p-space-sm bg-surface-container-lowest border border-outline-variant/40 flex flex-col gap-1.5 font-label-mono-sm text-label-mono-sm">
                   <div class="flex items-center justify-between gap-2 text-outline">
                     <span>VERFÜGBARKEIT:</span>
@@ -1096,7 +1016,6 @@
                 </div>
               </div>
 
-              <!-- Founder Statement & Principles -->
               <div class="lg:col-span-8 flex flex-col gap-space-md">
                 <div class="inline-flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-wider">
                   <span class="w-1.5 h-1.5 bg-primary"></span>
@@ -1128,12 +1047,8 @@
         </div>
       </section>
 
-      <!-- ========================================== -->
-      <!-- 06 // DIREKTGESPRÄCH & BRIEFING // KONTAKT -->
-      <!-- ========================================== -->
       <section class="w-full px-margin md:px-margin-desktop py-space-xl md:py-space-xxl bg-surface-container-low border-b border-outline-variant/30 interactive-spotlight" id="kontakt">
         <div class="max-w-7xl mx-auto flex flex-col gap-space-xl relative z-10">
-          <!-- Section Header -->
           <div class="reveal-item flex flex-col gap-space-xs max-w-3xl">
             <span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest">
               // KONTAKT &amp; ERSTGESPRÄCH // DIREKTE HILFE
@@ -1146,11 +1061,8 @@
             </p>
           </div>
 
-          <!-- 2-Column Booking & Briefing Engine -->
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
-            <!-- Left: Direct Founder Coordinates & Guarantees -->
             <div class="reveal-item lg:col-span-5 flex flex-col gap-space-lg">
-              <!-- Direct Communication Channels -->
               <div class="bg-surface-container-lowest border border-outline-variant/40 p-space-lg flex flex-col gap-space-md interactive-card">
                 <span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest pb-space-xs border-b border-outline-variant/30">
                   // DIREKTER KONTAKT ZU DOMINIK
@@ -1184,7 +1096,6 @@
                     </div>
                   </a>
                 </div>
-                <!-- Instant Video Call Booking -->
                 <div class="pt-space-md border-t border-outline-variant/30 flex flex-col gap-2">
                   <span class="font-label-mono-sm text-label-mono-sm text-outline uppercase">DIREKT IM KALENDER EINTRAGEN:</span>
                   <a class="inline-flex items-center justify-center gap-2 px-space-md py-3 bg-surface-container-high border border-outline-variant/50 text-on-surface hover:border-primary-container hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary font-label-mono-sm text-label-mono-sm uppercase tracking-wider transition-colors" data-cal-cta="contact_section" href="https://cal.com/dominik-schenitzki-431sms/erstgesprach-potenzialanalyse?utm_source=website&amp;utm_medium=contact_section" rel="noopener noreferrer" target="_blank">
@@ -1195,13 +1106,10 @@
               </div>
             </div>
 
-            <!-- Right: Interactive Project Briefing Form -->
             <div class="reveal-item lg:col-span-7 bg-surface-container-lowest border border-primary-container/40 p-space-md sm:p-space-lg md:p-space-xl relative shadow-2xl interactive-card">
-              <!-- Specular Milled Highlight Top Edge mit Pulsieren -->
               <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-container via-primary to-secondary line-glow-pulse"></div>
 
               <form class="flex flex-col gap-space-md" id="project-briefing-form" action="/api/contact" method="POST">
-                <!-- Honeypot Spam Protection -->
                 <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off"/>
 
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-space-xs border-b border-outline-variant/30">
@@ -1211,7 +1119,6 @@
                   <span class="font-label-mono-sm text-label-mono-sm text-primary">REAKTION IN &lt; 24H</span>
                 </div>
 
-                <!-- Form Row 1: Name & Unternehmen -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
                   <div class="flex flex-col gap-1.5">
                     <label for="briefing-name" class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">Name &amp; Vorname *</label>
@@ -1225,7 +1132,6 @@
                   </div>
                 </div>
 
-                <!-- Form Row 2: Mail & Phone -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
                   <div class="flex flex-col gap-1.5">
                     <label for="briefing-email" class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">E-Mail-Adresse *</label>
@@ -1239,7 +1145,6 @@
                   </div>
                 </div>
 
-                <!-- Form Row 3: Art des Anliegens (Industrial Checkboxes) -->
                 <div class="flex flex-col gap-2 pt-space-xs">
                   <label class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">Wobei kann ich Ihnen helfen?</label>
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-label-mono-sm text-label-mono-sm">
@@ -1262,20 +1167,17 @@
                   </div>
                 </div>
 
-                <!-- Form Row 4: Aktuelle Website (Optional) -->
                 <div class="flex flex-col gap-1.5">
                   <label for="briefing-website" class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">Aktuelle Website-URL (falls vorhanden)</label>
                   <input id="briefing-website" name="website" autocomplete="url" class="w-full h-12 bg-surface-container-low border border-outline-variant/40 px-space-md text-on-surface font-body-md placeholder:text-outline/50 focus:outline-none focus:border-primary-container transition-colors" placeholder="https://www.meine-website.de" type="url"/>
                 </div>
 
-                <!-- Form Row 5: Textarea Zielsetzung -->
                 <div class="flex flex-col gap-1.5">
                   <label for="briefing-message" class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">Worum geht es konkret? *</label>
                   <textarea id="briefing-message" name="message" class="briefing-input w-full p-space-md bg-surface-container-low border border-outline-variant/40 text-on-surface font-body-md placeholder:text-outline/50 focus:outline-none focus:border-primary-container transition-colors resize-none" placeholder="Beschreiben Sie kurz das akute Problem, Ihre Wünsche für eine neue Website oder welche Betreuung Sie sich wünschen..." required="" rows="3"></textarea>
                   <span class="field-error-msg">Bitte beschreiben Sie kurz Ihr Anliegen.</span>
                 </div>
 
-                <!-- Form Row 6: Zeithorizont Selector -->
                 <div class="flex flex-col gap-1.5">
                   <label class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">Dringlichkeit / Zeithorizont</label>
                   <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-label-mono-sm text-label-mono-sm text-center">
@@ -1294,12 +1196,10 @@
                   </div>
                 </div>
 
-                <!-- Error Status Banner (Hidden by default) -->
                 <div id="briefing-error" class="hidden p-space-sm bg-error-container/30 border border-error text-error font-label-mono-sm text-label-mono-sm">
                   Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder rufen Sie direkt unter +49 151 64020000 an.
                 </div>
 
-                <!-- Submit Button Trigger -->
                 <div class="pt-space-xs flex flex-col gap-space-sm">
                   <button id="briefing-submit-btn" class="w-full py-4 bg-primary-container hover:bg-primary text-on-primary-container font-label-mono-lg text-label-mono-lg uppercase tracking-wider transition-all duration-150 flex items-center justify-center gap-space-sm font-bold shadow-xl hover:shadow-primary-container/30 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed" type="submit">
                     <span class="w-2 h-2 bg-on-primary-container"></span>
@@ -1316,7 +1216,6 @@
                 </div>
               </form>
 
-              <!-- Briefing Submission Success Screen (Hidden by default) -->
               <div class="hidden p-space-xl flex flex-col items-center justify-center text-center gap-space-md min-h-[420px]" id="briefing-success">
                 <div class="w-16 h-16 bg-primary-container/20 border-2 border-primary-container flex items-center justify-center text-primary shadow-[0_0_20px_rgba(224,122,95,0.3)]">
                   <span class="material-symbols-outlined text-[36px]">check_circle</span>
@@ -1343,9 +1242,6 @@
     </div>
   </main>
 
-  <!-- ========================================== -->
-  <!-- FOOTER                                     -->
-  <!-- ========================================== -->
   <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 text-on-surface-variant">
     <div class="w-full px-margin md:px-margin-desktop py-space-xxl">
       <div class="max-w-7xl mx-auto">
@@ -1429,11 +1325,7 @@
     </div>
   </footer>
 
-  <!-- ========================================== -->
-  <!-- INTERACTIVE MICRO-INTERACTIONS & SCRIPTS   -->
-  <!-- ========================================== -->
   <script>
-    // Zentrale Konfiguration für Terminbuchungen (Single Source of Truth)
     const DTECH_CONFIG = Object.freeze({
       bookingBaseUrl: 'https://cal.com/dominik-schenitzki-431sms/erstgesprach-potenzialanalyse',
       utmSource: 'website',
@@ -1445,7 +1337,6 @@
       }
     });
 
-    // 0. Central Booking URL Wiring & Mobile Navigation Drawer Toggle
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('[data-cal-cta]').forEach((ctaEl) => {
         const medium = ctaEl.getAttribute('data-cal-cta');
@@ -1485,7 +1376,6 @@
       }
     });
 
-    // 1. Radio Button Selector & Post-Interaction Validation Fallback
     document.addEventListener('DOMContentLoaded', () => {
       const radioLabels = document.querySelectorAll('input[name="timing"]');
       radioLabels.forEach(radio => {
@@ -1505,7 +1395,6 @@
         }
       });
 
-      // Fallback for browsers without native :user-invalid support using WeakMap
       if (!window.CSS || !CSS.supports('selector(:user-invalid)')) {
         const dirtyState = new WeakMap();
         const formEl = document.getElementById('project-briefing-form');
@@ -1538,7 +1427,6 @@
         }
       }
 
-      // Production Contact Form Submission Handler (/api/contact + Web3Forms Fallback)
       const briefingForm = document.getElementById('project-briefing-form');
       const successBox = document.getElementById('briefing-success');
       const errorBox = document.getElementById('briefing-error');
@@ -1578,7 +1466,6 @@
               sent = true;
             }
           } catch (_) {
-            // Fallback to Web3Forms if running on static server without /api/contact
           }
 
           if (!sent) {
@@ -1604,7 +1491,6 @@
                 sent = true;
               }
             } catch (_) {
-              // Offline or blocked in local preview; still show confirmation UI if local
               if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
                 sent = true;
               }
@@ -1626,7 +1512,6 @@
       }
     });
 
-    // 2. Mouse-Follow Spotlight / Radial Glow on Cards & Sections (Desktop Pointer Only)
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     if (!prefersReduced && isFinePointer) {
@@ -1641,7 +1526,6 @@
         });
       });
 
-      // 3. Tactile 3D Micro-Tilt on Cards
       const tiltCards = document.querySelectorAll('.tilt-card');
       tiltCards.forEach(card => {
         card.addEventListener('pointermove', (e) => {
@@ -1650,7 +1534,7 @@
           const y = e.clientY - rect.top;
           const centerX = rect.width / 2;
           const centerY = rect.height / 2;
-          const rotateX = ((y - centerY) / centerY) * -3.5; // Max 3.5 deg
+          const rotateX = ((y - centerY) / centerY) * -3.5;
           const rotateY = ((x - centerX) / centerX) * 3.5;
           card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
         });
@@ -1660,7 +1544,6 @@
       });
     }
 
-    // 4. Scroll-Triggered Entrance Reveals
     document.addEventListener('DOMContentLoaded', () => {
       const revealItems = document.querySelectorAll('.reveal-item');
       if ('IntersectionObserver' in window && !prefersReduced) {
@@ -1678,7 +1561,6 @@
         revealItems.forEach(item => item.classList.add('is-revealed'));
       }
 
-      // 5. Animated Numbers & Metric Counters in References
       const counterElements = document.querySelectorAll('[data-counter-target]');
       if ('IntersectionObserver' in window && !prefersReduced) {
         const counterObserver = new IntersectionObserver((entries, observer) => {
@@ -1693,12 +1575,11 @@
               const absTarget = Math.abs(targetVal);
 
               let startTime = null;
-              const duration = 1400; // ms
+              const duration = 1400;
 
               function step(timestamp) {
                 if (!startTime) startTime = timestamp;
                 const progress = Math.min((timestamp - startTime) / duration, 1);
-                // easeOutQuart
                 const ease = 1 - Math.pow(1 - progress, 4);
                 const currentVal = (absTarget * ease);
                 const displayVal = (isNegative ? '-' : '') + currentVal.toFixed(decimals);
@@ -1719,7 +1600,6 @@
       }
     });
 
-    // 6. Interactive Hero Telemetry Console Switcher
     const telemetryData = {
       rettung: {
         stat1: '< 24h',
@@ -1754,7 +1634,6 @@
       const data = telemetryData[mode];
       if (!data) return;
 
-      // Switch bar styles
       const buttons = document.querySelectorAll('#telemetry-switch-bar button');
       buttons.forEach(btn => {
         if (btn.getAttribute('data-mode') === mode) {
@@ -1764,7 +1643,6 @@
         }
       });
 
-      // Highlights on cards
       ['telem-item-1', 'telem-item-2', 'telem-item-3'].forEach(id => {
         const card = document.getElementById(id);
         if (card) {
@@ -1778,7 +1656,6 @@
         }
       });
 
-      // Metrics values
       const s1 = document.getElementById('stat-val-1');
       const l1 = document.getElementById('stat-lbl-1');
       const s2 = document.getElementById('stat-val-2');
@@ -1794,7 +1671,6 @@
       if (l3) l3.textContent = data.lbl3;
     }
 
-    // Bind Switch buttons
     document.querySelectorAll('#telemetry-switch-bar button').forEach(btn => {
       btn.addEventListener('click', () => {
         const mode = btn.getAttribute('data-mode');
